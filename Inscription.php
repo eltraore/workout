@@ -36,21 +36,17 @@
                 <label for="entreprise">Entreprise :</label>
                 <!--Connecter à la base de donnee pour afficher les differentes entreprises-->
                 <select name="entreprise" id="entreprise">
+                    <option value="">--Choisir une entreprise--</option>
                     <?php 
                         require 'sqlconnect.php';
 
-                        $sql = 'SELECT COUNT(*) AS NB_LIVRE FROM books WHERE '. $_REQUEST["attribut"].' LIKE '."'%".$_REQUEST['chainCar']."%'" ;
+                        $sql = 'SELECT id, nom FROM entreprise' ;
                         $table = $connection->query($sql);
                         while ($ligne = $table->fetch()) {
-                            echo 'Nombre de livre trouvés: '.$ligne["NB_LIVRE"];
+                            echo '<option value="'.$ligne["id"].'">'.$ligne["nom"].'</option>';
                         }    
                         $table->closeCursor();    
                     ?>
-
-                    <option value="">--Choisir une entreprise--</option>
-                    <option value="1">Choix 1</option>
-                    <option value="choix2">Choix 2</option>
-                    <option value="choix3">Choix 3</option>
                 </select>
             </div>
 
