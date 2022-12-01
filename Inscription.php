@@ -10,13 +10,8 @@
     <body>
 
         <h1>Inscription</h1>
-        <form>
+        <form method="GET" action="inscriptionCompte.php">
             
-            <div>
-                <label for="id">Identifiant </label>
-                <input type="text" id="nada" id="identifiant">
-            </div>
-
             <div>
                 <label for="nom">Nom </label>
                 <input type="text" id="nada" id="nom" onfocusout="TestNom()">
