@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workout | Inscription </title>
 </head>
-
+<?php require "header.php"?>
     <body>
-        <?php require "header.php"?>
+        
         <h1>Inscription</h1>
         <form method="GET" action="inscriptionCompte.php">
             
             <div>
                 <label for="nom">Nom </label>
-                <input type="text" name="nom" id="nom" onfocusout="TestNom()">
+                <input type="text" name="nom" id="Nom" onfocusout="verifNom()">
             </div>
 
                 <div id="erreurNom"></div>   
