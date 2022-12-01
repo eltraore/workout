@@ -6,7 +6,7 @@
     try{
         $pdo->beginTransaction();
         
-        $pdo->exec("INSERT INTO produit values('".$_REQUEST["nom"]."','".$_REQUEST["prenom"]."','".$_REQUEST["poste"]."','".$_REQUEST["mail"]."','".$_REQUEST['MDP']."','".$_REQUEST['entreprise']."')");
+        $pdo->exec("INSERT INTO `employer`(`nom`, `prenom`, `poste`, `mail`, `MDP`, `id_Entreprise`) VALUES('".$_REQUEST["nom"]."','".$_REQUEST["prenom"]."','".$_REQUEST["poste"]."','".$_REQUEST["mail"]."','".$_REQUEST['password']."','".$_REQUEST['entreprise']."')");
 
         $pdo->commit();
         echo "tout est OK";
@@ -14,6 +14,7 @@
     }catch(Exception $e){
         $pdo->rollback();
 
+        echo "<br/>";
         echo "ERREUR !!! ";
         echo "Erreur: ".$e->getMessage()."<br/>";
         echo "N°: ".$e->getCode();

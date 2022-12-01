@@ -14,14 +14,14 @@
             
             <div>
                 <label for="nom">Nom </label>
-                <input type="text" id="nada" id="nom" onfocusout="TestNom()">
+                <input type="text" name="nom" id="nom" onfocusout="TestNom()">
             </div>
 
                 <div id="erreurNom"></div>   
                     <br>
                 <div>
                     <label for="prenom">Prénom :</label>
-                    <input type="text" id="Prenom" onfocusout="verifPrenom()">
+                    <input type="text" name="prenom" id="Prenom" onfocusout="verifPrenom()">
                 </div>
 
             <div id="erreurPrenom"></div>
@@ -29,15 +29,26 @@
             <div>
                 <label for="Poste">Poste :</label>
                 <!--Connecter à la base de donnee pour afficher les differents postes-->
-                <input type="text" id="poste">
+                <input type="text" name="poste" id="poste">
             </div>
 
             <div>
                 <label for="entreprise">Entreprise :</label>
                 <!--Connecter à la base de donnee pour afficher les differentes entreprises-->
                 <select name="entreprise" id="entreprise">
+                    <?php 
+                        require 'sqlconnect.php';
+
+                        $sql = 'SELECT COUNT(*) AS NB_LIVRE FROM books WHERE '. $_REQUEST["attribut"].' LIKE '."'%".$_REQUEST['chainCar']."%'" ;
+                        $table = $connection->query($sql);
+                        while ($ligne = $table->fetch()) {
+                            echo 'Nombre de livre trouvés: '.$ligne["NB_LIVRE"];
+                        }    
+                        $table->closeCursor();    
+                    ?>
+
                     <option value="">--Choisir une entreprise--</option>
-                    <option value="choix1">Choix 1</option>
+                    <option value="1">Choix 1</option>
                     <option value="choix2">Choix 2</option>
                     <option value="choix3">Choix 3</option>
                 </select>
@@ -45,14 +56,14 @@
 
             <div>
                 <label for="mail">Mail :</label>
-                <input type="text" id="Mail" onfocusout="verifMail()">
+                <input type="text" name="mail" id="Mail" onfocusout="verifMail()">
                 <div id="erreurMail"></div>
             </div>
 
 
             <div>
             <label for="Cfmail">Confirmation mail :</label>
-                <input type="text" name="Mail" id="CfMail" onfocusout="verifCfMail()">
+                <input type="text" id="CfMail" onfocusout="verifCfMail()">
                  <div id ="erreurCfMail"></div>
             </div>
 
@@ -60,12 +71,12 @@
 
             <div>
                 <label for="mdp">Mot de passe </label>
-                <input type="text" id="mdp" >
+                <input type="password" name="password" id="mdp" >
             </div>
 
             <div>
                 <label for="mdp_verif">Confirmation mot de passe </label>
-                <input type="text" id="mdp_verif" onfocusout="TestMdp_verif()">
+                <input type="password" id="mdp_verif" onfocusout="TestMdp_verif()">
             </div>
 
                 <div id="erreurMdp"></div>
