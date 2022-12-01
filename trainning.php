@@ -1,17 +1,17 @@
 <?php
-    include "sqlconnect.php";
+    include sqlconnect.php;
 ?>
 <html>
     <body>
-    <label for="">Nom de la categorie </label>
-    <select name="categorie"  id="categorie" required>
+    <label for="">Nom du champ </label>
+    <select name=""  id="" required>
         <?php
-        $reponse = $connection->query("SELECT * FROM `categorie`;");
-        while ($donnees = $reponse->fetch()){
-        ?>
-        <option value="categorie">
-            <?php echo $donnees['nom']; ?>
-        </option>
+        $reponse = $connection->query('SELECT * FROM "workout"');
+        while ($donnees = $reponse->fetch())
+        {
+            ?>
+            <option value="<?php echo $donnees['category']; ?>">
+            </option>
         <?php } ?>
     </select>
     <button type="submit">Choisis</button>

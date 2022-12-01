@@ -1,75 +1,86 @@
 <!DOCTYPE html>
-<html>
-
-    <head>
-        <Title>Inscription</Title>
-        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-        <script src="Inscription.js"></script>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout | Inscription </title>
+</head>
 
     <body>
-
-        <form>
-
+        <?php require "header.php"?>
+        <h1>Inscription</h1>
+        <form method="GET" action="inscriptionCompte.php">
+            
             <div>
                 <label for="nom">Nom </label>
-                <input type="text" id="nada" id="nom" onfocusout="TestNom()">
+                <input type="text" name="nom" id="nom" onfocusout="TestNom()">
             </div>
 
                 <div id="erreurNom"></div>   
                     <br>
                 <div>
                     <label for="prenom">Prénom :</label>
-                    <input type="text" id="prenom" onfocusout="TestPrenom()">
+                    <input type="text" name="prenom" id="Prenom" onfocusout="verifPrenom()">
                 </div>
 
             <div id="erreurPrenom"></div>
 
             <div>
-                <label for="Poste">Poste </label>
+                <label for="Poste">Poste :</label>
                 <!--Connecter à la base de donnee pour afficher les differents postes-->
-                <select name="poste" id="poste">
-                    <option value="">--Choisir un poste--</option>
-                    <option value="choix1">Choix 1</option>
-                    <option value="choix2">Choix 2</option>
-                    <option value="choix3">Choix 3</option>
-                </select>
+                <input type="text" name="poste" id="poste">
             </div>
 
             <div>
-                <label for="entreprise">Entreprise </label>
-                <label for="entreprise">Entreprise </label>
+                <label for="entreprise">Entreprise :</label>
                 <!--Connecter à la base de donnee pour afficher les differentes entreprises-->
                 <select name="entreprise" id="entreprise">
                     <option value="">--Choisir une entreprise--</option>
-                    <option value="choix1">Choix 1</option>
-                    <option value="choix2">Choix 2</option>
-                    <option value="choix3">Choix 3</option>
+                    <?php 
+                        require 'sqlconnect.php';
+
+                        $sql = 'SELECT id, nom FROM entreprise' ;
+                        $table = $connection->query($sql);
+                        while ($ligne = $table->fetch()) {
+                            echo '<option value="'.$ligne["id"].'">'.$ligne["nom"].'</option>';
+                        }    
+                        $table->closeCursor();    
+                    ?>
                 </select>
             </div>
 
             <div>
-                <label for="mail">mail </label>
-                <input type="text" id="mail" onfocusout="TestMail()">
+                <label for="mail">Mail :</label>
+                <input type="text" name="mail" id="Mail" onfocusout="verifMail()">
+                <div id="erreurMail"></div>
             </div>
 
-            <div id="erreurMail"></div>
+
+            <div>
+            <label for="Cfmail">Confirmation mail :</label>
+                <input type="text" id="CfMail" onfocusout="verifCfMail()">
+                 <div id ="erreurCfMail"></div>
+            </div>
+
+            
 
             <div>
                 <label for="mdp">Mot de passe </label>
-                <input type="text" id="mdp" >
+                <input type="password" name="password" id="mdp" >
             </div>
 
             <div>
                 <label for="mdp_verif">Confirmation mot de passe </label>
-                <input type="text" id="mdp_verif" onfocusout="TestMdp_verif()">
+                <input type="password" id="mdp_verif" onfocusout="TestMdp_verif()">
             </div>
 
                 <div id="erreurMdp"></div>
                     <br>
                 <div>
                     <input type="reset" value="Annuler">
-                    <input type="submit" value="S'inscrire" id="inscrire" disabled>
+
+                    <button id="inscrire">S'inscrire</button>
                 </div>
             </fieldset>
         </form>
