@@ -1,4 +1,3 @@
-lines (11 sloc)  280 Bytes
 
 <!DOCTYPE html>
 <html lang="en">
