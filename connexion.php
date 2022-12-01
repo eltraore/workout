@@ -26,10 +26,10 @@
         <?php
             //tente de se connecter à la base de donnée
             require 'sqlconnect.php';
-            $auth = $_REQUEST['name'];
+            $auth = $_REQUEST['mail'];
             $password = $_REQUEST['MDP'];
-            $reponse = $connection->query("SELECT * FROM `employer` WHERE `mail` = $auth AND `MDP` = $password");
-            $row_cnt = $pdo->rowCount();
+            $reponse = $connection->query("SELECT * FROM `employer` WHERE `mail` = "."'$auth'"." AND `MDP` = '$password'");
+            $row_cnt = $reponse->rowCount();
 
             if($row_cnt != 0) {
                 echo "connection reussit";
