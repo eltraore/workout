@@ -12,7 +12,7 @@ require "header.php";
 </head>
 <body>
     <a href="connexion.php">Se connecter</a>
-    <a href="Inscripton.php">S'inscrire</a>
+    <a href="Inscription.php">S'inscrire</a>
     <img src="logo.png">
 </body>
 </html>
