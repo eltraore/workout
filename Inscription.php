@@ -11,11 +11,6 @@
 
         <h1>Inscription</h1>
         <form>
-            
-            <div>
-                <label for="id">Identifiant </label>
-                <input type="text" id="nada" id="identifiant">
-            </div>
 
             <div>
                 <label for="nom">Nom </label>
@@ -55,6 +50,13 @@
             </div>
 
             <div>
+                <label for="mail">Adresse Mail </label>
+                <input type="text" id="mail" onfocusout="TestMail()">
+            </div>
+
+            <div id="erreurMail"></div>
+
+            <div>
                 <label for="mdp">Mot de passe </label>
                 <input type="text" id="mdp" >
             </div>
@@ -75,4 +77,4 @@
 
     </body>
 
-</html>
+</html> 

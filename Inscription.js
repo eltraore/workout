@@ -30,6 +30,19 @@ function TestPrenom() {
     }
 }
 
+function TestMail() {
+    var diverreurMail=document.getElementById("erreurMail");  
+    
+    var mail=document.getElementById("mail").value;
+
+    if (!mail.match(checkMail)) {
+        diverreurMail.innerHTML="<p id='error'>Cela doit être en format mail</p>";
+    }
+    else {
+        diverreurMail.innerHTML="";
+    }
+}
+
 function TestMdp_verif() {
     var diverreurMdp=document.getElementById("erreurMdp");  
     
@@ -65,6 +78,7 @@ function ToutBon() {
 
 var nom = ""
 var prenom = ""
+var mail = ""
 
 
 
