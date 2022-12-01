@@ -10,11 +10,6 @@
     <body>
 
         <form>
-            
-            <div>
-                <label for="id">Identifiant </label>
-                <input type="text" id="nada" id="identifiant">
-            </div>
 
             <div>
                 <label for="nom">Nom </label>
@@ -52,6 +47,13 @@
                     <option value="choix3">Choix 3</option>
                 </select>
             </div>
+
+            <div>
+                <label for="mail">mail </label>
+                <input type="text" id="mail" onfocusout="TestMail()">
+            </div>
+
+            <div id="erreurMail"></div>
 
             <div>
                 <label for="mdp">Mot de passe </label>
