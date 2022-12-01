@@ -10,7 +10,7 @@
 
         $pdo->commit();
         echo "tout est OK";
-        header("location: ../BackOffice.php");
+        header("location: ../index.php");
     }catch(Exception $e){
         $pdo->rollback();
 
