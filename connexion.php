@@ -23,30 +23,38 @@
                 <button type="submit"> se connecter </input><!--autre forme de bouton-->
             </div>
         </form>
-    
         <?php
-        
-        // Indique que des caractères interdits sont entrés
-        if (isset($_REQUEST['error'])) {
-            if ($_REQUEST['error'] == '1') {
-                echo "<br/><div class='result'>
-                        Echec de l'authentification : caractères interdits";
-                echo "</div>";
+            //tente de se connecter à la base de donnée
+            require 'sqlconnect.php';
+
+            //prépare la requête
+            $reponse = $connection->prepare("SELECT * FROM `utilisateur` WHERE `adresse_mail`= ? AND `mot_de_passe`= PASSWORD(?)");
+            $auth = $_REQUEST['name'];
+            $password = $_REQUEST['MDP'];
+            $reponse->bindparam(1, $auth, PDO::PARAM_STR);
+            $reponse->bindparam(2, $password, PDO::PARAM_STR);
+
+            //lance la requete
+            $reponse->execute();
+
+            //vérifie si un tel utilisateur existe
+            $row_cnt = $reponse->rowCount();
+            if ($row_cnt != 0) {
+                while ($resultat = $reponse->fetch()) {
+                    $mail = $resultat["adresse_mail"];
+                    $_SESSION['login'] = $mail; //entre dans une variable de session le mail
+                }
+                $reponsePanier = $connection->prepare("SELECT * FROM `panier` WHERE `adresse_mail`= ?");
+                $reponsePanier->bindparam(1, $auth, PDO::PARAM_STR);
+                $reponsePanier->execute();
+                while ($resultatPanier = $reponsePanier->fetch()) {
+                    $_SESSION['panier'] = $resultatPanier["code_panier"];
+                }
+
+                header('Location: index.php');
+            } else {
+                header('Location: connection.php?error=2'); //si données incorrectes, retour page connexion
             }
-            // Indique que les identifiants sont incorrects
-            if ($_REQUEST['error'] == '2') {
-                echo "<br/><div class='result'>
-                    Identifiant ou mot-de-passe incorrect";
-                echo "</div>";
-            }
-        }
-        //invoque le programme pour vérifier les données
-        if (isset($_REQUEST['auth']) && isset($_REQUEST['password'])) {
-            echo "<br/><div class='result'>";
-            $dbname = 'laFleur';
-            include 'sessions.php';
-            echo "</div>";
-        }
         ?>
     </body>
 
