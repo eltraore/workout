@@ -25,5 +25,5 @@ require "header.php";
             </div>
         </fieldset>
     </form>
-    <a href="index.html"><button>Retour</button></a>
+    <a href="index.php"><button>Retour</button></a>
 </html>
