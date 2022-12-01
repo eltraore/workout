@@ -1,5 +1,7 @@
+<?php
+require "header.php";
+?>
 <html>
-
     <head>
     	<title>Mon formulaire</title>
     </head>
@@ -18,7 +20,8 @@
             </div>
             <br>    
             <div>
-                <button type="submit">Se connecter</input><!--autre forme de bouton-->
+                <button type="reset">Annuler</input><!--autre forme de bouton-->
+                <button type="submit">Se connecter</input><!--autre forme de bouton-->      
             </div>
         </fieldset>
     </form>
