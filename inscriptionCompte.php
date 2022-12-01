@@ -10,7 +10,7 @@
 
         $pdo->commit();
         echo "tout est OK";
-        header("location: ../trainning.php");
+        header("location: trainning.php");
     }catch(Exception $e){
         $pdo->rollback();
 
