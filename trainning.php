@@ -6,11 +6,12 @@
     <label for="">Nom du champ </label>
     <select name=""  id="" required>
         <?php
-        $reponse = $connection->query('SELECT * FROM "workout"');
+        $reponse = $connection->query("SELECT * FROM `categorie`");
         while ($donnees = $reponse->fetch())
         {
             ?>
-            <option value="<?php echo $donnees['category']; ?>">
+            <option value="categorie">
+                <?php echo $donnees['nom']; ?>
             </option>
         <?php } ?>
     </select>
