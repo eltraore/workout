@@ -14,6 +14,28 @@ function TestNom() {
     }
 }
 
+
+function verifNom() {
+    var Nom = document.getElementById('Nom').value;
+    var regex = /^[a-zA-Z\-].{2,100}$/;
+    if (Nom.match(regex)){
+        //Mettre la 1ere lettre en maj
+        Nom = document.getElementById('Nom').style.backgroundColor = 'lightgreen';
+        var erreurNom = document.getElementById('erreurNom');
+        erreurNom.innerHTML = "";
+        test1 = true;
+    }
+    else 
+    {
+        Nom = document.getElementById('Nom').style.backgroundColor = '#FFCCCB';
+        var erreurNom = document.getElementById('erreurNom');
+        erreurNom.innerHTML = "<font color = red> Attention, rentrez au moins 3 lettres et uniquement des lettres !</font>";
+        test1 = false;
+    }
+    test();
+}
+
+
 function TestPrenom() {
     var diverreurPrenom=document.getElementById("erreurPrenom");  
     
