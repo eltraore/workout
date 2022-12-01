@@ -8,19 +8,20 @@
 </head>
 
     <body>
-
-        <form>
-
+        <?php require "header.php"?>
+        <h1>Inscription</h1>
+        <form method="GET" action="inscriptionCompte.php">
+            
             <div>
-                <label for="nom">Nom :</label>
-                <input type="text" id="Nom" onfocusout="verifNom()">
+                <label for="nom">Nom </label>
+                <input type="text" name="nom" id="nom" onfocusout="TestNom()">
             </div>
 
                 <div id="erreurNom"></div>   
                     <br>
                 <div>
                     <label for="prenom">Prénom :</label>
-                    <input type="text" id="Prenom" onfocusout="verifPrenom()">
+                    <input type="text" name="prenom" id="Prenom" onfocusout="verifPrenom()">
                 </div>
 
             <div id="erreurPrenom"></div>
@@ -28,12 +29,7 @@
             <div>
                 <label for="Poste">Poste :</label>
                 <!--Connecter à la base de donnee pour afficher les differents postes-->
-                <select name="poste" id="poste">
-                    <option value="">--Choisir un poste--</option>
-                    <option value="choix1">Choix 1</option>
-                    <option value="choix2">Choix 2</option>
-                    <option value="choix3">Choix 3</option>
-                </select>
+                <input type="text" name="poste" id="poste">
             </div>
 
             <div>
@@ -41,22 +37,29 @@
                 <!--Connecter à la base de donnee pour afficher les differentes entreprises-->
                 <select name="entreprise" id="entreprise">
                     <option value="">--Choisir une entreprise--</option>
-                    <option value="choix1">Choix 1</option>
-                    <option value="choix2">Choix 2</option>
-                    <option value="choix3">Choix 3</option>
+                    <?php 
+                        require 'sqlconnect.php';
+
+                        $sql = 'SELECT id, nom FROM entreprise' ;
+                        $table = $connection->query($sql);
+                        while ($ligne = $table->fetch()) {
+                            echo '<option value="'.$ligne["id"].'">'.$ligne["nom"].'</option>';
+                        }    
+                        $table->closeCursor();    
+                    ?>
                 </select>
             </div>
 
             <div>
                 <label for="mail">Mail :</label>
-                <input type="text" id="Mail" onfocusout="verifMail()">
+                <input type="text" name="mail" id="Mail" onfocusout="verifMail()">
                 <div id="erreurMail"></div>
             </div>
 
 
             <div>
             <label for="Cfmail">Confirmation mail :</label>
-                <input type="text" name="Mail" id="CfMail" onfocusout="verifCfMail()">
+                <input type="text" id="CfMail" onfocusout="verifCfMail()">
                  <div id ="erreurCfMail"></div>
             </div>
 
@@ -64,12 +67,12 @@
 
             <div>
                 <label for="mdp">Mot de passe </label>
-                <input type="text" id="mdp" >
+                <input type="password" name="password" id="mdp" >
             </div>
 
             <div>
                 <label for="mdp_verif">Confirmation mot de passe </label>
-                <input type="text" id="mdp_verif" onfocusout="TestMdp_verif()">
+                <input type="password" id="mdp_verif" onfocusout="TestMdp_verif()">
             </div>
 
                 <div id="erreurMdp"></div>
