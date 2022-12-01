@@ -24,18 +24,16 @@
             </div>
         </form>
         <?php
-            $pdo= new PDO('mysql:host=localhost;dbname=workout','root','');
-            $pdo->query("SET CHARACTER SET utf8");
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //tente de se connecter à la base de donnée
             require 'sqlconnect.php';
             $auth = $_REQUEST['name'];
             $password = $_REQUEST['MDP'];
-            $pdo->query("SELECT * FROM `employer` WHERE `mail` = $auth AND `MDP` = $password");
+            $reponse = $connection->query("SELECT * FROM `employer` WHERE `mail` = $auth AND `MDP` = $password");
             $row_cnt = $pdo->rowCount();
 
             if($row_cnt != 0) {
                 echo "connection reussit";
+                header("next page");
             }
 
         ?>
