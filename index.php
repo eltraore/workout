@@ -1,3 +1,7 @@
+<?php
+require "header.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,7 @@
 </head>
 <body>
     <a href="connexion.php">Se connecter</a>
-    <a href="inscripton.php">S'inscrire</a>
-    
+    <a href="Inscription.php">S'inscrire</a>
+    <img src="logo.png">
 </body>
 </html>
