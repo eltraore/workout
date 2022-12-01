@@ -6,11 +6,11 @@
     try{
         $pdo->beginTransaction();
         
-        $pdo->exec("INSERT INTO produit values('3','".$_REQUEST["nom"]."','".$_REQUEST["prenom"]."','".$_REQUEST["poste"]."','".$_REQUEST["mail"]."','".$_REQUEST['MDP']."','".$_REQUEST['entreprise']."')");
+        $pdo->exec("INSERT INTO produit values('".$_REQUEST["nom"]."','".$_REQUEST["prenom"]."','".$_REQUEST["poste"]."','".$_REQUEST["mail"]."','".$_REQUEST['MDP']."','".$_REQUEST['entreprise']."')");
 
         $pdo->commit();
         echo "tout est OK";
-
+        header("location: ../BackOffice.php");
     }catch(Exception $e){
         $pdo->rollback();
 
