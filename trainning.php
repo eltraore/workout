@@ -1,19 +1,26 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catégories</title>
+</head>
+<body>
+    <?php
     include "sqlconnect.php";
-?>
-<html>
-    <body>
-    <label for="">Nom du champ </label>
-    <select name=""  id="" required>
-        <?php
-        $reponse = $connection->query('SELECT * FROM "workout"');
-        while ($donnees = $reponse->fetch())
-        {
-            ?>
-            <option value="<?php echo $donnees['category']; ?>">
-            </option>
-        <?php } ?>
-    </select>
-    <button type="submit">Choisis</button>
-    </body>
+    $sql= $connection->prepare("SELECT * FROM categorie") ; 
+    $sql->execute();
+    $ligne = $sql->fetchall();
+
+    foreach($ligne as $categorie){
+        echo "<a href=\"echauffement.php?id=".$categorie['id']."\">hello
+        <div>
+            <h3>".$categorie['nom']."</h3>
+        </div>
+        </a>";
+    }
+    ?>
+</body>
 </html>
+
