@@ -7,6 +7,22 @@
     <title>Echauffement</title>
 </head>
 <body>
-    <iframe width="500" height="320" src="https://www.youtube.com/embed/lcZDWo6hiuI"> </iframe>
+    <?php
+    include "sqlconnect.php";
+
+    $sql= $connection->prepare("SELECT * FROM echauffement WHERE id_Categorie= :idCateg") ;
+    $sql->bindParam(":idCateg", $_REQUEST['id']);
+    $sql->execute();
+    $ligne = $sql->fetchall();
+
+    foreach($ligne as $echauffement){
+        echo "<a href=\"exercice.php?id=".$echauffement['id']."\">
+        <div>
+            <h3>".$echauffement['nom']."</h3>
+        </div>
+        </a>";
+    }
+    ?>
 </body>
 </html>
+

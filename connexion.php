@@ -22,7 +22,7 @@ require "header.php";
             <br>
             <div>
                 <label for="password">Mot de passe : </label><!--on créer un label donc un objet que lon peut reutiliser avec for il pointe sur l'id name   -->
-                <input id="password" name="password" type="text"/>
+                <input id="password" name="password" type="password"/>
             </div>
             <br>    
             <div>

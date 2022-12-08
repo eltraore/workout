@@ -15,7 +15,7 @@
     $ligne = $sql->fetchall();
 
     foreach($ligne as $categorie){
-        echo "<a href=\"echauffement.php?id=".$categorie['id']."\">hello
+        echo "<a href=\"echauffement.php?id=".$categorie['id']."\">
         <div>
             <h3>".$categorie['nom']."</h3>
         </div>
