@@ -1,25 +1,28 @@
 <?php
 
-    $pdo= new PDO('mysql:host=localhost;dbname=workout','root','');
-    $pdo->query("SET CHARACTER SET utf8");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    try{
-        $pdo->beginTransaction();
-        
-        $pdo->exec("INSERT INTO `employer`(`nom`, `prenom`, `poste`, `mail`, `MDP`, `id_Entreprise`) VALUES('".$_REQUEST["nom"]."','".$_REQUEST["prenom"]."','".$_REQUEST["poste"]."','".$_REQUEST["mail"]."','".$_REQUEST['password']."','".$_REQUEST['entreprise']."')");
+try{
+    require "sqlconnect.php";
+    $sql= $connection->prepare("INSERT INTO employer (nom,prenom,poste,mail,MDP, id_Entreprise) VALUES 
+    (:nom, :prenom, :poste, :mail, :MDP, :id_Entreprise)") ;
 
-        $pdo->commit();
-        echo "tout est OK";
-        header("location: trainning.php");
-    }catch(Exception $e){
-        $pdo->rollback();
+    $sql->bindParam(':nom',$_REQUEST["nom"],PDO::PARAM_STR);
+    $sql->bindParam(':prenom',$_REQUEST["prenom"],PDO::PARAM_STR);
+    $sql->bindParam(':poste', $_REQUEST["poste"], PDO::PARAM_STR);
+    $sql->bindParam(':mail', $_REQUEST["mail"], PDO::PARAM_STR);
+    $sql->bindParam(':MDP', SHA1($_REQUEST['password']), PDO::PARAM_STR);
+    $sql->bindParam(':id_Entreprise', $_REQUEST['entreprise'], PDO::PARAM_INT);
+  
 
-        echo "<br/>";
-        echo "ERREUR !!! ";
-        echo "Erreur: ".$e->getMessage()."<br/>";
-        echo "N°: ".$e->getCode();
 
-        exit();
-    }
+    $sql->execute();
+
+    echo "Vos informations ont bien été ajoutées à notre base de données ! Vous êtes maintenant inscris !";
+
+    header("location: trainning.php");
+
+}catch (PDOException $e){
+    echo "Erreur: ".$e->getMessage();
+    echo"<a href =\"accueil.php\">Retour à l'accueil</a>";
+}
 
 ?>

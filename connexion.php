@@ -12,17 +12,17 @@ require "header.php";
 </head>
 
 
-    <form method="GET" action=" on c pas " enctype="multipart/form-data">
+    <form method="GET" action="connexionCompte.php">
         <fieldset>
             <legend>Connexion</legend>
             <div>
-                <label for="name">Adresse email : </label><!--on créer un label donc un objet que lon peut reutiliser avec for il pointe sur l'id name   -->
-                <input id="name" name="name" type="text"/>
+                <label for="mail">Adresse email : </label><!--on créer un label donc un objet que lon peut reutiliser avec for il pointe sur l'id name   -->
+                <input id="name" name="mail" type="text"/>
             </div>
             <br>
             <div>
-                <label for="MDP">Mot de passe : </label><!--on créer un label donc un objet que lon peut reutiliser avec for il pointe sur l'id name   -->
-                <input id="MDP" name="MDP" type="text"/>
+                <label for="password">Mot de passe : </label><!--on créer un label donc un objet que lon peut reutiliser avec for il pointe sur l'id name   -->
+                <input id="password" name="password" type="text"/>
             </div>
             <br>    
             <div>
