@@ -62,8 +62,7 @@
                 <input type="text" id="CfMail" onfocusout="verifCfMail()">
                  <div id ="erreurCfMail"></div>
             </div>
-
-            
+           
 
             <div>
                 <label for="mdp">Mot de passe </label>
@@ -84,7 +83,6 @@
                 </div>
             </fieldset>
         </form>
-        <a href="index.php"><button>Retour</button></a>
+        <a href="accueil.php"><button>Retour</button></a>
     </body>
-
 </html> 

@@ -10,7 +10,9 @@ require "header.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workout | Accueil </title>
 </head>
-    <body>
-        <a href="accueil.php"><img src="logo.png"></a>
-    </body>
+<body>
+    <a href="connexion.php">Se connecter</a>
+    <a href="Inscription.php">S'inscrire</a>
+    <img src="logo.png">
+</body>
 </html>
