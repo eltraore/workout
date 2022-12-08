@@ -9,6 +9,7 @@
 <body>
     <?php
     include "sqlconnect.php";
+
     $sql= $connection->prepare("SELECT * FROM categorie") ; 
     $sql->execute();
     $ligne = $sql->fetchall();
