@@ -12,8 +12,6 @@ try{
     $sql->bindParam(':MDP', SHA1($_REQUEST['password']), PDO::PARAM_STR);
     $sql->bindParam(':id_Entreprise', $_REQUEST['entreprise'], PDO::PARAM_INT);
   
-
-
     $sql->execute();
 
     echo "Vos informations ont bien été ajoutées à notre base de données ! Vous êtes maintenant inscris !";

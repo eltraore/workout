@@ -7,19 +7,18 @@ switch ($_REQUEST['table']) {
     case 0: //Entreprises
         
         try{
-            require "sqlconnect.php";
-            $sql= $connection->prepare("INSERT INTO enrreprise (nom,adresse) VALUES 
-            (:nom, :adresse") ;
+            require "../../sqlconnect.php";
+            $sql= $connection->prepare("INSERT INTO entreprise (nom,adresse) VALUES 
+            (:nom, :adresse)") ;
         
             $sql->bindParam(':nom',$_REQUEST["nom"],PDO::PARAM_STR);
             $sql->bindParam(':adresse',$_REQUEST["adresse"],PDO::PARAM_STR);         
-        
-        
+
             $sql->execute();
         
-            echo "Vos informations ont bien été ajoutées à notre base de données ! Vous êtes maintenant inscris !";
+            echo "Entreprise ajoutée";
         
-            header("location: trainning.php");
+            header("location: ../EntrepriseBO.php");
         
         }catch (PDOException $e){
             echo "Erreur: ".$e->getMessage();

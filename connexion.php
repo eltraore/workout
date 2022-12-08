@@ -21,7 +21,7 @@ require "header.php";
                 <div class="col-2"></div>
                 <div class="col-8" style="text-align: center;">
                         <label for="mail">Adresse email : </label><!--on créer un label donc un objet que lon peut reutiliser avec for il pointe sur l'id name   -->
-                        <input class="rounded-pill name="mail" type="text"  id="Mail" onfocusout="verifMail()"/>
+                        <input class="rounded-pill" name="mail" type="text"  id="Mail" onfocusout="verifMail()"/>
                         <div id="erreurMail"></div>   
                 </div>
                 <div class="col-2"></div>
@@ -33,7 +33,7 @@ require "header.php";
                 <div class="col-2"></div>
                 <div class="col-8" style="text-align: center;">
                     <label for="password">Mot de passe : </label><!--on créer un label donc un objet que lon peut reutiliser avec for il pointe sur l'id name   -->
-                    <input class="rounded-pill id="password" name="password" type="password"/><div id="erreurMail"></div>   
+                    <input class="rounded-pill" id="password" name="password" type="password"/><div id="erreurMail"></div>   
                 </div>
                 <div class="col-2"></div>
             </div>

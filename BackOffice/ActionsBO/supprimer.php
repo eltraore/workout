@@ -4,7 +4,7 @@ switch ($_REQUEST['table']) {
     case 0: //Entreprises
         
         try{
-            require "sqlconnect.php";
+            require "../../sqlconnect.php";
             $sql= $connection->prepare("DELETE FROM entreprise WHERE id = :id");
         
             $sql->bindParam(':id',$_REQUEST["id"],PDO::PARAM_STR);
@@ -28,6 +28,9 @@ switch ($_REQUEST['table']) {
         break;
     case 3: //Echauffements
         echo "i égal 2";
+        break;
+    default:
+        echo "erreur";
         break;
 }
 

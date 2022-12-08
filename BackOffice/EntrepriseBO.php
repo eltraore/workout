@@ -15,10 +15,10 @@
     $ligne = $sql->fetchall();
     echo"<h3>Entreprise</h3>";
     foreach($ligne as $entreprise){
-        echo "<div>".$entreprise['nom']."<a href=\"ActionBO/supprimer.php?table=".$entreprise['id']."\"><button>Modifier</button></a><a href=\"#\"><button>Supprimer</button></a></div>";
+        echo "<div>".$entreprise['nom']."<a href=\"ActionsBO/ModifierPO.php?table=0&id=".$entreprise['id']."\"><button>Modifier</button></a><a href=\"ActionsBO/supprimer.php?id=".$entreprise['id']."&table=0\"><button>Supprimer</button></a></div>";
     }
     ?>
-    <a href="#"><button>Ajouter</button></a>
+    <a href="ActionsBO/AjouterBO.php?table=0"><button>Ajouter</button></a>
     
 </body>
 </html>
