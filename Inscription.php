@@ -1,23 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php require "header.php"?>
+
+
     <title>Workout | Inscription </title>
     <script src="Inscription.js"></script>
 </head>
-<?php require "header.php"?>
+
     <body>
-        
-        <h1>Inscription</h1>
-        <img src="logo.png">
+
+        <div style="text-align: center;">>
+            <img src="logo.png" height="80" width="80" >
+        </div>    
         <form method="GET" action="inscriptionCompte.php">
             
             <div class="row">
                 <div class="col-6">
                     <div class="col-sm-">
-                        <div class="centre-texte">
+                        <div style="text-align: center;">
                             <label for="nom">Nom</label>
                         </div>
                     </div>
@@ -32,7 +30,7 @@
                 <br>
                 <div class="col-6">
                     <div  class="col-sm-">
-                        <div class="centre-texte">
+                        <div style="text-align: center;">
                             <label for="prenom">Prénom</label>
                         </div>
                     </div>

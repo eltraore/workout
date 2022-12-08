@@ -92,11 +92,11 @@ label{
 }
 
 .row{
-    border: 2px;
     border-color: aqua;
     border-style: double; 
 }
 
-.centre-texte{
-    text-align: center;
+
+input{
+    width: 140px;
 }
