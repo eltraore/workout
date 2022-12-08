@@ -47,10 +47,13 @@ require "header.php";
     <div class="row">
         <div class="col-4"> </div>
             <div class="col-4" style="text-align: center;">
-                <button type="button" style="color: white;" class="btn btn-dark rounded-pill">J'ai finis !</button>
+                <form action="qr_code.php">
+                    <button type="submit" style="color: white;" class="btn btn-dark rounded-pill">J'ai finis !</button>
+                </form>
             </div>
         <div class="col-4"> </div>
     </div>
+
 </main>
 <footer>
     
