@@ -1,7 +1,7 @@
 <?php
 
 try{
-
+    session_start();
     require "sqlconnect.php" ;
    
     $sql= $connection->prepare("SELECT mail,MDP FROM employer WHERE mail = :mail AND MDP = :MDP") ;
@@ -17,16 +17,16 @@ try{
     {
         if ($_REQUEST["mail"]==$ligne[0]['mail'] && SHA1($_REQUEST['password'])==$ligne[0]['MDP'] ) {  
 
-            //$_SESSION['id'] = $id;
-            //$_SESSION['mdp'] = $mdp;
-            //$_SESSION['erreurConnect']=false;
+            $_SESSION['user'] = $user;
+            $_SESSION['mdp'] = $mdp;
+            $_SESSION['erreurConnect']=false;
             header("Location: trainning.php");
         
     }
     }else{
 
-        //$_SESSION['erreurConnect']=true;
-        header("Location: index.php");
+        $_SESSION['erreurConnect']=true;
+        header("Location: connexion.php");
         
         }
 
