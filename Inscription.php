@@ -8,20 +8,23 @@
 </head>
 <?php require "header.php"?>
     <body>
-        
-        <h1>Inscription</h1>
+        <img src="logo.png">
         <form method="GET" action="inscriptionCompte.php">
             
-            <div>
-                <label for="nom">Nom </label>
-                <input class="coin-arrondi" type="text" name="nom" id="Nom" onfocusout="verifNom()">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="Nom">
+                        <label for="nom">Nom </label>
+                        <input class="coin-arrondi" type="text" name="nom" id="Nom" onfocusout="verifNom()">
+                    </div>
+                </div>
             </div>
 
                 <div id="erreurNom"></div>   
                     <br>
                 <div>
                     <label for="prenom">Prénom :</label>
-                    <input type="text" name="prenom" id="Prenom" onfocusout="verifPrenom()">
+                    <input class="coin-arrondi" type="text" name="prenom" id="Prenom" onfocusout="verifPrenom()">
                 </div>
 
             <div id="erreurPrenom"></div>
@@ -29,13 +32,13 @@
             <div>
                 <label for="Poste">Poste :</label>
                 <!--Connecter à la base de donnee pour afficher les differents postes-->
-                <input type="text" name="poste" id="poste">
+                <input class="coin-arrondi" type="text" name="poste" id="poste">
             </div>
 
             <div>
                 <label for="entreprise">Entreprise :</label>
                 <!--Connecter à la base de donnee pour afficher les differentes entreprises-->
-                <select name="entreprise" id="entreprise">
+                <select class="coin-arrondi" name="entreprise" id="entreprise">
                     <option value="">--Choisir une entreprise--</option>
                     <?php 
                         require 'sqlconnect.php';
@@ -52,37 +55,37 @@
 
             <div>
                 <label for="mail">Mail :</label>
-                <input type="text" name="mail" id="Mail" onfocusout="verifMail()">
+                <input class="coin-arrondi" type="text" name="mail" id="Mail" onfocusout="verifMail()">
                 <div id="erreurMail"></div>
             </div>
 
 
             <div>
             <label for="Cfmail">Confirmation mail :</label>
-                <input type="text" id="CfMail" onfocusout="verifCfMail()">
-                 <div id ="erreurCfMail"></div>
+                <input class="coin-arrondi" type="text" id="CfMail" onfocusout="verifCfMail()">
+                <div id ="erreurCfMail"></div>
             </div>
            
 
             <div>
                 <label for="mdp">Mot de passe </label>
-                <input type="password" name="password" id="mdp" >
+                <input class="coin-arrondi" type="password" name="password" id="mdp" >
             </div>
 
             <div>
                 <label for="mdp_verif">Confirmation mot de passe </label>
-                <input type="password" id="mdp_verif" onfocusout="TestMdp_verif()">
+                <input class="coin-arrondi" type="password" id="mdp_verif" onfocusout="TestMdp_verif()">
             </div>
 
                 <div id="erreurMdp"></div>
                     <br>
                 <div>
-                    <input type="reset" value="Annuler">
+                    <input class="coin-arrondi" type="reset" value="Annuler">
 
-                    <button id="inscrire">S'inscrire</button>
+                    <button class="coin-arrondi" id="inscrire">S'inscrire</button>
                 </div>
             </fieldset>
         </form>
-        <a href="accueil.php"><button>Retour</button></a>
+        <a href="accueil.php"><button class="coin-arrondi">Retour</button></a>
     </body>
 </html> 
