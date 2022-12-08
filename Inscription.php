@@ -14,7 +14,7 @@
             
             <div>
                 <label for="nom">Nom </label>
-                <input type="text" name="nom" id="Nom" onfocusout="verifNom()">
+                <input class="coin-arrondi" type="text" name="nom" id="Nom" onfocusout="verifNom()">
             </div>
 
                 <div id="erreurNom"></div>   
