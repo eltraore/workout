@@ -2,12 +2,7 @@
 require "header.php";
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workout | Connexion </title>
 </head>
 
@@ -22,7 +17,7 @@ require "header.php";
             <br>
             <div>
                 <label for="password">Mot de passe : </label><!--on créer un label donc un objet que lon peut reutiliser avec for il pointe sur l'id name   -->
-                <input id="password" name="password" type="text"/>
+                <input id="password" name="password" type="password"/>
             </div>
             <br>    
             <div>

@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workout | Inscription </title>
-</head>
 <?php require "header.php"?>
+<head>
+    <title>Workout | Inscription </title>
+    <script src="Inscription.js"></script>
+</head>
+
     <body>
         <img src="logo.png">
         <form method="GET" action="inscriptionCompte.php">
