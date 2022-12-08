@@ -33,7 +33,6 @@ require "header.php";
             </div>
         <div class="col-4"> </div>
     </div>
-<<<<<<< HEAD
 
     <div class="row">
         <div class="col-2"> </div>
@@ -52,14 +51,6 @@ require "header.php";
             </div>
         <div class="col-4"> </div>
     </div>
-       
-=======
-    <center>
-        <a href="#"><button class="button_finish">
-            J'ai finis!
-        </button></a>
-    </center>
->>>>>>> main
 </main>
 <footer>
     
