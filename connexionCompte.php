@@ -8,7 +8,6 @@ try{
 
     $sql->bindParam(':mail', $_REQUEST["mail"], PDO::PARAM_STR);
     $sql->bindParam(':MDP', SHA1($_REQUEST['password']), PDO::PARAM_STR);
-
   
     $sql->execute();
     $ligne = $sql->fetchall();
