@@ -4,15 +4,28 @@ require "header.php";
 
 <head>
     <title>Workout | Connexion </title>
+    <script src="Connexion.js"></script>
 </head>
 
-
+    
     <form method="GET" action="connexionCompte.php">
         <fieldset>
             <legend>Connexion</legend>
+            <?php 
+            session_start();
+            
+
+            if(!isset($_SESSION['erreurConnect']) || $_SESSION['erreurConnect'])
+            {
+                echo "<p> Login ou mot de passe incorect </p>" ;
+            }
+            
+            
+            ?>
             <div>
                 <label for="mail">Adresse email : </label><!--on créer un label donc un objet que lon peut reutiliser avec for il pointe sur l'id name   -->
-                <input id="name" name="mail" type="text"/>
+                <input name="mail" type="text"  id="Mail" onfocusout="verifMail()"/>
+                <div id="erreurMail"></div>   
             </div>
             <br>
             <div>
