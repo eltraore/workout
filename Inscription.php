@@ -1,30 +1,48 @@
-<?php require "header.php"?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workout | Inscription </title>
     <script src="Inscription.js"></script>
 </head>
-
+<?php require "header.php"?>
     <body>
+        
+        <h1>Inscription</h1>
         <img src="logo.png">
         <form method="GET" action="inscriptionCompte.php">
             
             <div class="row">
-                <div class="col-sm">
-                    <div class="Nom">
-                        <label for="nom">Nom </label>
-                        <input class="coin-arrondi" type="text" name="nom" id="Nom" onfocusout="verifNom()">
+                <div class="col-6">
+                    <div class="col-sm-">
+                        <div class="centre-texte">
+                            <label for="nom">Nom</label>
+                        </div>
                     </div>
+                    <div class="col-sm-">
+                        <div class="Nom">
+                            <input class="coin-arrondi" type="text" name="nom" id="Nom" onfocusout="verifNom()">
+                        </div>
+                    </div>
+
+                    <div id="erreurNom"></div> 
+                </div>  
+                <br>
+                <div class="col-6">
+                    <div  class="col-sm-">
+                        <div class="centre-texte">
+                            <label for="prenom">Prénom</label>
+                        </div>
+                    </div>
+                    <div  class="col-sm-">
+                        <input class="coin-arrondi" type="text" name="prenom" id="Prenom" onfocusout="verifPrenom()">
+                    </div>
+
+                    <div id="erreurPrenom"></div>
                 </div>
             </div>
-
-                <div id="erreurNom"></div>   
-                    <br>
-                <div>
-                    <label for="prenom">Prénom :</label>
-                    <input class="coin-arrondi" type="text" name="prenom" id="Prenom" onfocusout="verifPrenom()">
-                </div>
-
-            <div id="erreurPrenom"></div>
 
             <div>
                 <label for="Poste">Poste :</label>
