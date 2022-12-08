@@ -1,0 +1,25 @@
+.bloc
+{
+    width: 1500px;
+    height: 100%;
+    background: white;
+    margin: 0 auto;
+}
+
+
+@media screen and (max-width: 600px)
+{
+    .bloc {
+        width: 90%;
+        background: darkred;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 1000px)
+{
+    .bloc {
+        height: 100%;
+        background: darkred;
+    }
+}
