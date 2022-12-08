@@ -1,0 +1,38 @@
+
+
+
+/* */
+.hero{
+    height: 80vh;/*HAUTEUR VIDEO*/
+    position: relative;
+}
+
+.hero .content{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero video{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0.5;/*lumineusiter de la video*/
+}
+
+.hero p, .hero a {
+    font-size: 24px;
+}
+
+
+
+
+
+
+
+
+
+
