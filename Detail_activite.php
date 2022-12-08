@@ -36,9 +36,9 @@ require "header.php";
         </center>
     </div>
     <center>
-        <button class="button_finish">
+        <a href="#"><button class="button_finish">
             J'ai finis!
-        </button>
+        </button></a>
     </center>
 </main>
 </body>

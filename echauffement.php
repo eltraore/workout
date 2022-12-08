@@ -16,7 +16,7 @@
     $ligne = $sql->fetchall();
 
     foreach($ligne as $echauffement){
-        echo "<a href=\"exercice.php?id=".$echauffement['id']."\">
+        echo "<a href=\"Detail_activite.php?id=".$echauffement['id']."\">
         <div>
             <h3>".$echauffement['nom']."</h3>
         </div>
