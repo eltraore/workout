@@ -1,4 +1,5 @@
 <?php
+require "header.php";
 include "sqlconnect.php";
 $sql= $connection->query("SELECT CURRENT_USER;") ;
 $sql->execute();
