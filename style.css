@@ -1,7 +1,75 @@
+.material-symbols-outlined {
+    margin-left: 50px;
 
-/*
-body{
-    background: linear-gradient(#000000, #CB0B0B);
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+}
+
+/*background*/
+
+html 
+{
+    height: auto;
+    width: auto;
+    background: linear-gradient(#2B2929, #CB0B0B);
     background-repeat: no-repeat;
 }
-*/
+
+.bloc
+{
+    width: 1500px;
+    height: 100%;
+    margin: 30px auto 30px;
+}
+
+/*responsive*/
+
+@media screen and (max-width: 600px)
+{
+    .bloc {
+        width: 90%;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 1000px)
+{
+    .bloc {
+        height: 100%;
+    }
+}
+
+
+
+/*Detail_activité*/
+
+img
+{
+    margin-top: 50px;
+}
+
+
+
+.video_placement
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.button_finish{
+    margin-top: 50px;
+
+    background-color: #2B2929; /* Gray */
+    border: none;
+    color: white;
+    padding: 15px 45px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
