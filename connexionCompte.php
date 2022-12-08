@@ -26,7 +26,7 @@ try{
     }else{
 
         //$_SESSION['erreurConnect']=true;
-        header("Location: index.php");
+        header("Location: connexion.php");
         
         }
 
