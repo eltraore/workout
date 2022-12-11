@@ -20,7 +20,7 @@ try{
             $_SESSION['user'] = $_REQUEST["mail"];
             $_SESSION['mdp'] =  SHA1($_REQUEST['password']);
             $_SESSION['erreurConnect']=false;
-            //header("Location: trainning.php");
+            header("Location: trainning.php");
         
     }
     }else{

@@ -7,9 +7,9 @@
     <title>BackOffice</title>
 </head>
 <body>
-    <div>Employers</div>
-    <div>Entreprises</div>
-    <div>Catégories</div>
-    <div>Echauffements</div>
+    <a href="BackOffice/BackOfficeChoose.php?table=0"><div>Entreprises</div></a>
+    <a href="BackOffice/BackOfficeChoose.php?table=1"><div>Employers</div></a>
+    <a href="BackOffice/BackOfficeChoose.php?table=2"><div>Catégories</div></a>
+    <a href="BackOffice/BackOfficeChoose.php?table=3"><div>Echauffements</div></a>
 </body>
 </html>

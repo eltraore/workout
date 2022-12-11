@@ -19,17 +19,43 @@ switch ($_REQUEST['table']) {
             <button type="submit">Ajouter</button>
             <button type="reset">Annuler</button>
         </form>
-        <a href="EntrepriseBO.php"><button>Retour</button></a>
+        <a href="../BackOfficeChoose.php"><button>Retour</button></a>
         <?php
         break;
     case 1: //Employers
         echo "i égal 1";
         break;
     case 2: //Catégories
-        echo "i égal 2";
+        ?>
+        <form method="GET" action="ajouter.php">
+            <input type="text" name="table" value= "<?php echo$_REQUEST['table'];?>" hidden>
+            <div>
+                <label>Nom</label>
+                <input type="text" name="nom">
+            </div>
+
+
+            <button type="submit">Ajouter</button>
+            <button type="reset">Annuler</button>
+        </form>
+        <a href="../BackOfficeChoose.php"><button>Retour</button></a>
+        <?php
         break;
     case 3: //Echauffements
-        echo "i égal 2";
+        ?>
+        <form method="GET" action="ajouter.php">
+            <input type="text" name="table" value= "<?php echo$_REQUEST['table'];?>" hidden>
+            <div>
+                <label>Nom</label>
+                <input type="text" name="nom">
+            </div>
+
+
+            <button type="submit">Ajouter</button>
+            <button type="reset">Annuler</button>
+        </form>
+        <a href="../BackOfficeChoose.php"><button>Retour</button></a>
+        <?php
         break;
     default:
         echo "erreur";
