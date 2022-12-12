@@ -12,7 +12,7 @@ switch ($_REQUEST['table']) {
         
             echo "Vos informations ont bien été supprimé";
         
-            header("location: ../EntrepriseBO.php");
+            header("location: ../BackOfficeChoose.php?table=0.php");
         
         }catch (PDOException $e){
             echo "Erreur: ".$e->getMessage();

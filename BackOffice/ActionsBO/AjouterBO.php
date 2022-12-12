@@ -19,7 +19,7 @@ switch ($_REQUEST['table']) {
             <button type="submit">Ajouter</button>
             <button type="reset">Annuler</button>
         </form>
-        <a href="../BackOfficeChoose.php"><button>Retour</button></a>
+        <a href="../BackOfficeChoose.php?table=0"><button>Retour</button></a>
         <?php
         break;
     case 1: //Employers

@@ -18,7 +18,7 @@ switch ($_REQUEST['table']) {
         
             echo "Entreprise ajoutée";
         
-            header("location: ../EntrepriseBO.php");
+            header("location: ../BackOfficeChoose.php?table=0.php");
         
         }catch (PDOException $e){
             echo "Erreur: ".$e->getMessage();
