@@ -18,7 +18,7 @@ switch ($_REQUEST['table']) {
         $ligne = $sql->fetchall();
         echo"<h3>Entreprise</h3>";
         foreach($ligne as $entreprise){
-            echo "<div>".$entreprise['nom']." <a href=\"ActionsBO/ModifierPO.php?table=0&id=".$entreprise['id']."\"><button>Modifier</button></a><a href=\"ActionsBO/supprimer.php?id=".$entreprise['id']."&table=0\"><button>Supprimer</button></a></div>";
+            echo "<div>".$entreprise['nom']." <a href=\"ActionsBO/ModifierBO.php?table=0&id=".$entreprise['id']."\"><button>Modifier</button></a><a href=\"ActionsBO/supprimer.php?id=".$entreprise['id']."&table=0\"><button>Supprimer</button></a></div>";
         }
         ?>
         <a href="ActionsBO/AjouterBO.php?table=0"><button>Ajouter</button></a>
@@ -32,7 +32,7 @@ switch ($_REQUEST['table']) {
         $ligne = $sql->fetchall();
         echo"<h3>Employers</h3>";
         foreach($ligne as $employer){
-            echo "<div>".$employer['mail']." - ".$employer['entrepriseEmploy']. " <a href=\"ActionsBO/ModifierPO.php?table=1&id=".$employer['id']."\"><button>Modifier</button></a><a href=\"ActionsBO/supprimer.php?id=".$employer['id']."&table=1\"><button>Supprimer</button></a></div>";
+            echo "<div>".$employer['mail']." - ".$employer['entrepriseEmploy']. " <a href=\"ActionsBO/ModifierBO.php?table=1&id=".$employer['id']."\"><button>Modifier</button></a><a href=\"ActionsBO/supprimer.php?id=".$employer['id']."&table=1\"><button>Supprimer</button></a></div>";
         }
         ?>
         <a href="ActionsBO/AjouterBO.php?table=1"><button>Ajouter</button></a>
@@ -46,7 +46,7 @@ switch ($_REQUEST['table']) {
         $ligne = $sql->fetchall();
         echo"<h3>Catégories</h3>";
         foreach($ligne as $categorie){
-            echo "<div>".$categorie['nom']." <a href=\"ActionsBO/ModifierPO.php?table=2&id=".$categorie['id']."\"><button>Modifier</button></a><a href=\"ActionsBO/supprimer.php?id=".$categorie['id']."&table=2\"><button>Supprimer</button></a></div>";
+            echo "<div>".$categorie['nom']." <a href=\"ActionsBO/ModifierBO.php?table=2&id=".$categorie['id']."\"><button>Modifier</button></a><a href=\"ActionsBO/supprimer.php?id=".$categorie['id']."&table=2\"><button>Supprimer</button></a></div>";
         }
         ?>
         <a href="ActionsBO/AjouterBO.php?table=2"><button>Ajouter</button></a>
@@ -60,7 +60,7 @@ switch ($_REQUEST['table']) {
         $ligne = $sql->fetchall();
         echo"<h3>Echauffements</h3>";
         foreach($ligne as $echauffement){
-            echo "<div>".$echauffement['nom']." - ".$echauffement['nomCateg']." <a href=\"ActionsBO/ModifierPO.php?table=3&id=".$echauffement['id']."\"><button>Modifier</button></a><a href=\"ActionsBO/supprimer.php?id=".$echauffement['id']."&table=3\"><button>Supprimer</button></a></div>";
+            echo "<div>".$echauffement['nom']." - ".$echauffement['nomCateg']." <a href=\"ActionsBO/ModifierBO.php?table=3&id=".$echauffement['id']."\"><button>Modifier</button></a><a href=\"ActionsBO/supprimer.php?id=".$echauffement['id']."&table=3\"><button>Supprimer</button></a></div>";
         }
         ?>
         <a href="ActionsBO/AjouterBO.php?table=3"><button>Ajouter</button></a>
