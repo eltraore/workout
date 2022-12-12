@@ -8,7 +8,7 @@ switch ($_REQUEST['table']) {
         
         try{
             require "../../sqlconnect.php";
-            $sql= $connection->prepare("UPDATE entreprise SET nom=:nom, adresse=:adresse WHERE id=6") ;
+            $sql= $connection->prepare("UPDATE entreprise SET nom=:nom, adresse=:adresse WHERE id=:id") ;
         
             $sql->bindParam(':nom',$_REQUEST["nom"],PDO::PARAM_STR);
             $sql->bindParam(':adresse',$_REQUEST["adresse"],PDO::PARAM_STR);         
@@ -17,11 +17,14 @@ switch ($_REQUEST['table']) {
         
             echo "Entreprise ajoutée";
         
-            header("location: ../EntrepriseBO.php");
+            header("location: ../BackOfficeChoose.php?table=0.php");
         
         }catch (PDOException $e){
             echo "Erreur: ".$e->getMessage();
-            echo"<a href =\"EntrepriseBO.php\">Retour à l'accueil</a>";
+            echo"<a href =\"../BackOfficeChoose.php?table=0.php\">Retour à l'accueil</a>";
+        }catch(Exeption $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=0\">Retour à l'accueil</a>";
         }
 
         break;
@@ -29,7 +32,26 @@ switch ($_REQUEST['table']) {
         echo "i égal 1";
         break;
     case 2: //Catégories
-        echo "i égal 2";
+        try{
+            require "../../sqlconnect.php";
+            $sql= $connection->prepare("UPDATE categorie SET nom=:nom WHERE id=:id") ;
+        
+            $sql->bindParam(':nom',$_REQUEST["nom"],PDO::PARAM_STR);
+            $sql->bindParam(':id',$_REQUEST["id"],PDO::PARAM_STR);         
+
+            $sql->execute();
+        
+            echo "Entreprise ajoutée";
+        
+            header("location: ../BackOfficeChoose.php?table=2.php");
+        
+        }catch (PDOException $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=2.php\">Retour à l'accueil</a>";
+        }catch(Exeption $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=2\">Retour à l'accueil</a>";
+        }
         break;
     case 3: //Echauffements
         echo "i égal 2";

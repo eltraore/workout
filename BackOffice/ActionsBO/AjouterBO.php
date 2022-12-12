@@ -50,6 +50,10 @@ switch ($_REQUEST['table']) {
                 <input type="text" name="nom">
             </div>
             <div>
+                <label>Nom Vidéo</label>
+                <input type="text" name="video">
+            </div>
+            <div>
                 <label>Catégorie</label>
                 <select>
                 <?php    

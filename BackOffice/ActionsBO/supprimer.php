@@ -19,7 +19,7 @@ switch ($_REQUEST['table']) {
             echo"<a href =\"../BackOfficeChoose.php?table=0\">Retour à l'accueil</a>";
         }catch(Exeption $e){
             echo "Erreur: ".$e->getMessage();
-            echo"<a href =\"../BackOfficeChoose.php?table=3\">Retour à l'accueil</a>";
+            echo"<a href =\"../BackOfficeChoose.php?table=0\">Retour à l'accueil</a>";
         }
 
         break;
@@ -40,7 +40,7 @@ switch ($_REQUEST['table']) {
             echo"<a href =\"../BackOfficeChoose.php?table=1\">Retour à l'accueil</a>";
         }catch(Exeption $e){
             echo "Erreur: ".$e->getMessage();
-            echo"<a href =\"../BackOfficeChoose.php?table=3\">Retour à l'accueil</a>";
+            echo"<a href =\"../BackOfficeChoose.php?table=1\">Retour à l'accueil</a>";
         }
         break;
     case 2: //Catégories
@@ -60,7 +60,7 @@ switch ($_REQUEST['table']) {
             echo"<a href =\"../BackOfficeChoose.php?table=2\">Retour à l'accueil</a>";
         }catch(Exeption $e){
             echo "Erreur: ".$e->getMessage();
-            echo"<a href =\"../BackOfficeChoose.php?table=3\">Retour à l'accueil</a>";
+            echo"<a href =\"../BackOfficeChoose.php?table=2\">Retour à l'accueil</a>";
         }
         break;
     case 3: //Echauffements

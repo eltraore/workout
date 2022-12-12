@@ -23,6 +23,9 @@ switch ($_REQUEST['table']) {
         }catch (PDOException $e){
             echo "Erreur: ".$e->getMessage();
             echo"<a href =\"../BackOfficeChoose.php?table=0\">Retour à l'accueil</a>";
+        }catch(Exeption $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=0\">Retour à l'accueil</a>";
         }
 
         break;
@@ -30,10 +33,53 @@ switch ($_REQUEST['table']) {
         echo "i égal 1";
         break;
     case 2: //Catégories
-        echo "i égal 2";
+        try{
+            require "../../sqlconnect.php";
+            $sql= $connection->prepare("INSERT INTO categorie (nom) VALUES 
+            (:nom)") ;
+        
+            $sql->bindParam(':nom',$_REQUEST["nom"],PDO::PARAM_STR);
+
+
+            $sql->execute();
+        
+            echo "Catégorie ajoutée";
+        
+            header("location: ../BackOfficeChoose.php?table=2.php");
+        
+        }catch (PDOException $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=2\">Retour à l'accueil</a>";
+        }catch(Exeption $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=2\">Retour à l'accueil</a>";
+        }
+
         break;
     case 3: //Echauffements
-        echo "i égal 2";
+        try{
+            require "../../sqlconnect.php";
+            $sql= $connection->prepare("INSERT INTO echauffement (nom,video,id_Categorie) VALUES 
+            (:nom,:video,:id_Categorie)") ;
+        
+            $sql->bindParam(':nom',$_REQUEST["nom"],PDO::PARAM_STR);
+            $sql->bindParam(':video',$_REQUEST["video"],PDO::PARAM_STR);
+            $sql->bindParam(':id_Categorie',$_REQUEST["categorieEchauff"],PDO::PARAM_STR);
+
+
+            $sql->execute();
+        
+            echo "Echauffement ajoutée";
+        
+            header("location: ../BackOfficeChoose.php?table=2.php");
+        
+        }catch (PDOException $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=2\">Retour à l'accueil</a>";
+        }catch(Exeption $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=2\">Retour à l'accueil</a>";
+        }
         break;
 }
 
