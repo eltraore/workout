@@ -10,24 +10,78 @@ switch ($_REQUEST['table']) {
             $sql->bindParam(':id',$_REQUEST["id"],PDO::PARAM_STR);
             $sql->execute();
         
-            echo "Vos informations ont bien été supprimé";
+            echo "L'Entreprise a bien été supprimé";
         
             header("location: ../BackOfficeChoose.php?table=0.php");
         
         }catch (PDOException $e){
             echo "Erreur: ".$e->getMessage();
             echo"<a href =\"../BackOfficeChoose.php?table=0\">Retour à l'accueil</a>";
+        }catch(Exeption $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=3\">Retour à l'accueil</a>";
         }
 
         break;
     case 1: //Employers
-        echo "i égal 1";
+        try{
+            require "../../sqlconnect.php";
+            $sql= $connection->prepare("DELETE FROM employer WHERE id = :id");
+        
+            $sql->bindParam(':id',$_REQUEST["id"],PDO::PARAM_STR);
+            $sql->execute();
+        
+            echo "L'Employer a bien été supprimé";
+        
+            header("location: ../BackOfficeChoose.php?table=1.php");
+        
+        }catch (PDOException $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=1\">Retour à l'accueil</a>";
+        }catch(Exeption $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=3\">Retour à l'accueil</a>";
+        }
         break;
     case 2: //Catégories
-        echo "i égal 2";
+        try{
+            require "../../sqlconnect.php";
+            $sql= $connection->prepare("DELETE FROM categorie WHERE id = :id");
+        
+            $sql->bindParam(':id',$_REQUEST["id"],PDO::PARAM_STR);
+            $sql->execute();
+        
+            echo "La Catégorie a bien été supprimé";
+        
+            header("location: ../BackOfficeChoose.php?table=2.php");
+        
+        }catch (PDOException $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=2\">Retour à l'accueil</a>";
+        }catch(Exeption $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=3\">Retour à l'accueil</a>";
+        }
         break;
     case 3: //Echauffements
-        echo "i égal 2";
+        try{
+            require "../../sqlconnect.php";
+            $sql= $connection->prepare("DELETE FROM echauffement WHERE id = :id");
+        
+            $sql->bindParam(':id',$_REQUEST["id"],PDO::PARAM_STR);
+            $sql->execute();
+        
+            echo "'L'Echauffement a bien été supprimé";
+        
+            header("location: ../BackOfficeChoose.php?table=3.php");
+        
+        }catch (PDOException $e ){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=3\">Retour à l'accueil</a>";
+        }catch(Exeption $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=3\">Retour à l'accueil</a>";
+        }
         break;
     default:
         echo "erreur";
