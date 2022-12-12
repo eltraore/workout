@@ -16,7 +16,7 @@ switch ($_REQUEST['table']) {
         
         }catch (PDOException $e){
             echo "Erreur: ".$e->getMessage();
-            echo"<a href =\"../EntrepriseBO.php\">Retour à l'accueil</a>";
+            echo"<a href =\"../BackOfficeChoose.php?table=0\">Retour à l'accueil</a>";
         }
 
         break;
