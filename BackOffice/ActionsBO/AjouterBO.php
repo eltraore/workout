@@ -4,7 +4,7 @@ switch ($_REQUEST['table']) {
     case 0: //Entreprises
 
         ?>
-        <form method="GET" action="ajouter.php"=>
+        <form method="GET" action="ajouter.php">
             <input type="text" name="table" value= "<?php echo$_REQUEST['table'];?>" hidden>
             <div>
                 <label>nom</label>
@@ -38,7 +38,7 @@ switch ($_REQUEST['table']) {
             <button type="submit">Ajouter</button>
             <button type="reset">Annuler</button>
         </form>
-        <a href="../BackOfficeChoose.php"><button>Retour</button></a>
+        <a href="../BackOfficeChoose.php?table=2"><button>Retour</button></a>
         <?php
         break;
     case 3: //Echauffements
@@ -74,7 +74,7 @@ switch ($_REQUEST['table']) {
             <button type="submit">Ajouter</button>
             <button type="reset">Annuler</button>
         </form>
-            <a href="../BackOfficeChoose.php"><button>Retour</button></a>
+            <a href="../BackOfficeChoose.php?table=3"><button>Retour</button></a>
             <?php
         break;
     default:
