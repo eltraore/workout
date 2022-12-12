@@ -41,7 +41,7 @@ switch ($_REQUEST['table']) {
 
             $sql->execute();
         
-            echo "Entreprise ajoutée";
+            echo "Catégorie modifiée";
         
             header("location: ../BackOfficeChoose.php?table=2.php");
         

@@ -72,6 +72,6 @@ switch ($_REQUEST['table']) {
 }
 
 ?>
-<div><a href="../BackOffice.php"><button>Retour</button></a></div>
+<div><a href="BackOffice.php"><button>Retour</button></a></div>
 </body>
 </html>

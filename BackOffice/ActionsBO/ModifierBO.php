@@ -30,7 +30,7 @@ switch ($_REQUEST['table']) {
                 <button type="submit">Modifier</button>
                 <button type="reset">Annuler</button>
             </form>
-            <a href="EntrepriseBO.php"><button>Retour</button></a>
+            <a href="../BackOfficeChoose.php?tabl0"><button>Retour</button></a>
             <?php
 
             
@@ -42,38 +42,40 @@ switch ($_REQUEST['table']) {
     case 1: //Employers
         echo "i égal 1";
         break;
-        case 2: //Catégories
+    case 2: //Catégories
 
-            include "../../sqlconnect.php";
+        include "../../sqlconnect.php";
 
-            $id= $_REQUEST['id'];
+        $id= $_REQUEST['id'];
 
-            $sql= $connection->prepare("SELECT * FROM categorie WHERE id=$id") ; 
-            $sql->execute();
-            $ligne = $sql->fetchall();
+        $sql= $connection->prepare("SELECT * FROM categorie WHERE id=$id") ; 
+        $sql->execute();
+        $ligne = $sql->fetchall();
 
-            
-            foreach($ligne as $categorie){
-                echo"<h3>Catégorie ".$categorie['nom']."</h3>";
-            ?>
-            
-            <form method="GET" action="ajouter.php">
-                <input type="text" name="table" value= "<?php echo$_REQUEST['table'];?>" hidden>
-                <div>
-                    <label>Nom</label>
-                    <input type="text" name="nom" value="<?php echo $categorie['nom'];?>">
-                </div>
-    
-    
-                <button type="submit">Modifier</button>
-                <button type="reset">Annuler</button>
-            </form>
-            <a href="../BackOfficeChoose.php"><button>Retour</button></a>
-            <?php
-            }
+        
+        foreach($ligne as $categorie){
+            echo"<h3>Catégorie ".$categorie['nom']."</h3>";
+        ?>
+        
+        <form method="GET" action="modifier.php">
+            <input type="text" name="id" value= "<?php echo $_REQUEST['id'];?>" hidden>
+            <input type="text" name="table" value= "<?php echo $_REQUEST['table'];?>" hidden>
+            <div>
+                <label>Nom</label>
+                <input type="text" name="nom" value="<?php echo $categorie['nom'];?>">
+            </div>
+
+
+            <button type="submit">Modifier</button>
+            <button type="reset">Annuler</button>
+        </form>
+        <a href="../BackOfficeChoose.php"><button>Retour</button></a>
+        <?php
+        }
 
 
             break;
+
         case 3: //Echauffements
 
             include "../../sqlconnect.php";
