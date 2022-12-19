@@ -94,33 +94,38 @@ switch ($_REQUEST['table']) {
                 ?>
 
             
-                <form method="GET" action="ajouter.php">
+                <form method="GET" action="modifier.php">
+                    <input type="text" name="id" value= "<?php echo $_REQUEST['id'];?>" hidden>
                     <input type="text" name="table" value= "<?php echo$_REQUEST['table'];?>" hidden>
                     <div> 
                         <label>Nom</label>
                         <input type="text" name="nom" value="<?php echo $echauffement['nom'];?>">
                     </div>
-                <div>
-                    <label>Catégorie</label>
-                    <select>
-                    <?php
+
+                    <div> 
+                        <label>Vidéo</label>
+                        <input type="text" name="video" value="<?php echo $echauffement['video'];?>">
+                    </div>
+
+                    <div>
+                        <label>Catégorie</label>
+                        <select name="categorieEchauff">
+                        <?php
             }
             $sql= $connection->prepare("SELECT * FROM categorie") ; 
             $sql->execute();
             $ligne = $sql->fetchall();
 
-
-
             foreach($ligne as $categorie){ 
                 if($categorie["id"] == $saCategorie){
-                    echo "<option name=\"categorieEchauff\" value=".$categorie['id']." selected=\"selected\">".$categorie['nom']."</option>";
+                    echo "<option value=".$categorie['id']." selected=\"selected\">".$categorie['nom']."</option>";
                 }else{
-                    echo "<option name=\"categorieEchauff\" value=".$categorie['id'].">".$categorie['nom']."</option>";
+                    echo "<option value=".$categorie['id'].">".$categorie['nom']."</option>";
                 }
             }
-            ?>
-                    </select>
-                </div>
+                        ?>
+                        </select>
+                    </div>
             <button type="submit">Modifier</button>
             <button type="reset">Annuler</button>
             </form>
