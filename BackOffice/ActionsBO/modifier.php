@@ -29,7 +29,29 @@ switch ($_REQUEST['table']) {
 
         break;
     case 1: //Employers
-        echo "i égal 1";
+        try{
+            require "../../sqlconnect.php";
+            $sql= $connection->prepare("UPDATE employer SET nom=:nom, prenom=:prenom, poste=:poste, id_Entreprise=:idEntreprise WHERE id=:id") ;
+        
+            $sql->bindParam(':id',$_REQUEST["id"],PDO::PARAM_STR);
+            $sql->bindParam(':nom',$_REQUEST["nom"],PDO::PARAM_STR);
+            $sql->bindParam(':prenom',$_REQUEST["prenom"],PDO::PARAM_STR);
+            $sql->bindParam(':poste',$_REQUEST["poste"],PDO::PARAM_STR);
+            $sql->bindParam(':idEntreprise',$_REQUEST["entrepriseEmp"],PDO::PARAM_STR);
+            
+            $sql->execute();
+        
+            echo "Employer modifié";
+        
+            header("location: ../BackOfficeChoose.php?table=1");
+        
+        }catch (PDOException $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=1.php\">Retour à l'accueil</a>";
+        }catch(Exception $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=1\">Retour à l'accueil</a>";
+        }
         break;
     case 2: //Catégories
         try{

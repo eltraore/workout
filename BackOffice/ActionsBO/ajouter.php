@@ -50,6 +50,9 @@ switch ($_REQUEST['table']) {
         
         }catch (PDOException $e){
             echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=2\">Retour à l'accueil</a>";
+        }catch (Exception $e){
+            echo "Erreur: ".$e->getMessage();
             echo"<a href =\"accueil.php\">Retour à l'accueil</a>";
         }
         break;
@@ -94,6 +97,9 @@ switch ($_REQUEST['table']) {
         
             header("location: ../BackOfficeChoose.php?table=3");
         
+        }catch (PDOException $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"../BackOfficeChoose.php?table=2\">Retour à l'accueil</a>";
         }catch(Exception $e){
             echo "Erreur: ".$e->getMessage();
             echo"<a href =\"../BackOfficeChoose.php?table=2\">Retour à l'accueil</a>";
