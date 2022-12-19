@@ -12,7 +12,7 @@ switch ($_REQUEST['table']) {
         
             echo "L'Entreprise a bien été supprimé";
         
-            header("location: ../BackOfficeChoose.php?table=0.php");
+            header("location: ../BackOfficeChoose.php?table=0");
         
         }catch (PDOException $e){
             echo "Erreur: ".$e->getMessage();
@@ -33,7 +33,7 @@ switch ($_REQUEST['table']) {
         
             echo "L'Employer a bien été supprimé";
         
-            header("location: ../BackOfficeChoose.php?table=1.php");
+            header("location: ../BackOfficeChoose.php?table=1");
         
         }catch (PDOException $e){
             echo "Erreur: ".$e->getMessage();
@@ -53,7 +53,7 @@ switch ($_REQUEST['table']) {
         
             echo "La Catégorie a bien été supprimé";
         
-            header("location: ../BackOfficeChoose.php?table=2.php");
+            header("location: ../BackOfficeChoose.php?table=2");
         
         }catch (PDOException $e){
             echo "Erreur: ".$e->getMessage();
@@ -73,7 +73,7 @@ switch ($_REQUEST['table']) {
         
             echo "'L'Echauffement a bien été supprimé";
         
-            header("location: ../BackOfficeChoose.php?table=3.php");
+            header("location: ../BackOfficeChoose.php?table=3");
         
         }catch (PDOException $e ){
             echo "Erreur: ".$e->getMessage();

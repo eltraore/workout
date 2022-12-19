@@ -23,7 +23,53 @@ switch ($_REQUEST['table']) {
         <?php
         break;
     case 1: //Employers
-        echo "i égal 1";
+        ?>
+        <form method="GET" action="ajouter.php">
+            <input type="text" name="table" value= "<?php echo$_REQUEST['table'];?>" hidden>
+
+            <div>
+                <label>Nom</label>
+                <input type="text" name="nom">
+            </div>
+            <div>
+                <label>Prenom</label>
+                <input type="text" name="prenom">
+            </div>
+            <div>
+                <label>poste</label>
+                <input type="text" name="poste">
+            </div>
+            <div>
+                <label>Mail</label>
+                <input type="text" name="mail">
+            </div>
+            <div>
+                <label>Mot de passe</label>
+                <input type="password" name="password">
+            </div>
+            <div>
+                <label>Entreprise</label>
+                <select name="entrepriseEmp">
+                <?php    
+
+                include "../../sqlconnect.php";
+                $sql= $connection->prepare("SELECT * FROM entreprise") ; 
+                $sql->execute();
+                $ligne = $sql->fetchall();
+
+                
+                foreach($ligne as $entreprise){ 
+                    echo "<option  value=".$entreprise['id'].">".$entreprise['nom']."</option>";
+                }
+                ?>
+                </select>
+            </div>
+
+            <button type="submit">Ajouter</button>
+            <button type="reset">Annuler</button>
+        </form>
+        <a href="../BackOfficeChoose.php?table=1"><button>Retour</button></a>
+        <?php
         break;
     case 2: //Catégories
         ?>
@@ -55,7 +101,7 @@ switch ($_REQUEST['table']) {
             </div>
             <div>
                 <label>Catégorie</label>
-                <select>
+                <select name="categorieEchauff">
                 <?php    
 
                 include "../../sqlconnect.php";
@@ -65,7 +111,7 @@ switch ($_REQUEST['table']) {
 
                 
                 foreach($ligne as $categorie){ 
-                    echo "<option name=\"categorieEchauff\" value=".$categorie['id'].">".$categorie['nom']."</option>";
+                    echo "<option value=".$categorie['id'].">".$categorie['nom']."</option>";
                 }
                 ?>
                 </select>

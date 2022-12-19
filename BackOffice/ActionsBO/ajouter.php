@@ -18,7 +18,7 @@ switch ($_REQUEST['table']) {
         
             echo "Entreprise ajoutée";
         
-            header("location: ../BackOfficeChoose.php?table=0.php");
+            header("location: ../BackOfficeChoose.php?table=0");
         
         }catch (PDOException $e){
             echo "Erreur: ".$e->getMessage();
@@ -30,7 +30,28 @@ switch ($_REQUEST['table']) {
 
         break;
     case 1: //Employers
-        echo "i égal 1";
+        try{
+            require "../../sqlconnect.php";
+            $sql= $connection->prepare("INSERT INTO employer (nom,prenom,poste,mail,MDP, id_Entreprise) VALUES 
+            (:nom, :prenom, :poste, :mail, :MDP, :id_Entreprise)") ;
+        
+            $sql->bindParam(':nom',$_REQUEST["nom"],PDO::PARAM_STR);
+            $sql->bindParam(':prenom',$_REQUEST["prenom"],PDO::PARAM_STR);
+            $sql->bindParam(':poste', $_REQUEST["poste"], PDO::PARAM_STR);
+            $sql->bindParam(':mail', $_REQUEST["mail"], PDO::PARAM_STR);
+            $sql->bindParam(':MDP', SHA1($_REQUEST['password']), PDO::PARAM_STR);
+            $sql->bindParam(':id_Entreprise', $_REQUEST['entrepriseEmp'], PDO::PARAM_INT);
+          
+            $sql->execute();
+        
+            echo "Employer ajouté";
+        
+            header("location: ../BackOfficeChoose.php?table=1");
+        
+        }catch (PDOException $e){
+            echo "Erreur: ".$e->getMessage();
+            echo"<a href =\"accueil.php\">Retour à l'accueil</a>";
+        }
         break;
     case 2: //Catégories
         try{
@@ -45,7 +66,7 @@ switch ($_REQUEST['table']) {
         
             echo "Catégorie ajoutée";
         
-            header("location: ../BackOfficeChoose.php?table=2.php");
+            header("location: ../BackOfficeChoose.php?table=2");
         
         }catch (PDOException $e){
             echo "Erreur: ".$e->getMessage();
@@ -71,7 +92,7 @@ switch ($_REQUEST['table']) {
         
             echo "Echauffement ajoutée";
         
-            header("location: ../BackOfficeChoose.php?table=2.php");
+            header("location: ../BackOfficeChoose.php?table=3");
         
         }catch(Exception $e){
             echo "Erreur: ".$e->getMessage();
