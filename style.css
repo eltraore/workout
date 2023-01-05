@@ -74,29 +74,77 @@ body
     border-radius: 20px;
 } */
 
+
+/*Inscription.php*/
 .coin-arrondi{
-    border-bottom-left-radius : 10px;
-    border-bottom-right-radius : 10px;
-    border-top-left-radius : 10px;
-    border-top-right-radius : 10px;
+    border-bottom-left-radius : 25px;
+    border-bottom-right-radius : 25px;
+    border-top-left-radius : 25px;
+    border-top-right-radius : 25px;
+    height: 32px;
+    box-shadow: 3px 2px 2px rgb(0, 0, 0);
   }
 
 label{
     color: white;
 }
 
-.Nom{
+.align-input{
     display: table;
     margin-left: auto;
     margin-right: auto;   
 }
 
 .row{
-    border-color: aqua;
-    border-style: double; 
+    
+    margin-bottom: 12px; 
+}
+
+input{
+    background-color: rgb(241, 241, 241);
 }
 
 
-input{
+option{
+    background-color: rgb(241, 241, 241);
+}
+
+#Nom{
     width: 140px;
+}
+
+#Prenom{
+    width: 140px;
+}
+
+#poste{
+    width: 230px;
+}
+
+#entreprise{
+    width: 230px;
+}
+
+#Mail{
+    width: 230px;
+}
+
+#CfMail{
+    width: 230px;
+}
+
+#mdp{
+    width: 230px;
+}
+
+#mdp_verif{
+    width: 230px;
+}
+
+#reset{
+    width: 100px;
+}
+
+#inscrire{
+    width: 100px;
 }
