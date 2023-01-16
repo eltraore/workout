@@ -16,34 +16,24 @@ html{
 
 body
 {
-    height: auto;
-    width: auto;
     background: linear-gradient(#2B2929, #CB0B0B);
     background-repeat: no-repeat;
-    background-size: cover;
-    bottom: 0;
-}
-
-.bloc
-{
-    width: 1500px;
-    height: 100%;
-    margin: 30px auto 30px;
 }
 
 /*responsive*/
 
-@media screen and (max-width: 600px)
+@media only screen and (min-width: 321px) and (max-width: 799px)
 {
-    .bloc {
-        width: 90%;
+    body {
+        width: 100%;
         font-size: 0.9em;
+        position: absolute;
     }
 }
 
 @media screen and (max-width: 1000px)
 {
-    .bloc {
+    body {
         height: 100%;
     }
 }
@@ -81,4 +71,29 @@ body
     border-top-right-radius : 10px;
   }
 
+.lien {
+    text-decoration: none;
+    color: #fff;
+}
+
+.case{
+    background-image: url("assets/echauffement.jpg");
+}
+
+.case > h3{
+    color: #000;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size:xx-large;
+}
+
+.categorie{
+    text-align: center;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.nom_categ{
+    color: #000;
+}
   
