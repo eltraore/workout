@@ -5,7 +5,7 @@ try{
     require "sqlconnect.php" ;
     $psw=SHA1($_REQUEST['password']);
    
-    $sql= $connection->prepare("SELECT mail,MDP FROM employer WHERE mail = :mail AND MDP = :MDP") ;
+    $sql= $connection->prepare("SELECT * FROM employer WHERE mail = :mail AND MDP = :MDP") ;
 
     $sql->bindParam(':mail', $_REQUEST["mail"], PDO::PARAM_STR);
     $sql->bindParam(':MDP', $psw, PDO::PARAM_STR);
@@ -22,6 +22,7 @@ try{
 
             $_SESSION['estConnecte']=true;
             $_SESSION['erreurConnect']=false;
+
             header("Location: trainning.php");
         
     }
