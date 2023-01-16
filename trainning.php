@@ -26,17 +26,12 @@
             <div class="col-1"></div>
             <div class="col-10 case coin-arrondi">
             <?php
-                include "sqlconnect.php";
+                
+               
 
-                $sql= $connection->prepare("SELECT * FROM employer") ; 
-                $sql->execute();
-                $ligne = $sql->fetchall();
-
-                foreach($ligne as $employer){
-
-                    echo "<h3 class=\"text\"> Hello ! ".$employer['prenom']." ".$employer['nom']."</h3>";
+                    echo "<h3> Salut  ".$_SESSION['prenom']." ".$_SESSION['nom']." !</h3>";
                     
-                }
+                
             ?>
             </div>
             <div class="col-1"></div>
