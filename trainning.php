@@ -3,11 +3,8 @@
     session_start();
     if(!$_SESSION['estConnecte']|| !isset($_SESSION['estConnecte'])){
         header("Location: connexion.php");
-    }
-
-
-
-require "header.php"?>
+    }else{
+        require "header.php"?>
 <head>
     <title>Workout | Catégories</title>
 </head>
@@ -29,4 +26,9 @@ require "header.php"?>
     ?>
 </body>
 </html>
+
+<?php
+    }
+?>
+
 
