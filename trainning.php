@@ -29,7 +29,7 @@
                 
                
 
-                    echo "<h3> Salut  ".$_SESSION['prenom']." ".$_SESSION['nom']." !</h3>";
+                    echo "<h3> Salut  ".$_SESSION['prenom']." !</h3>";
                     
                 
             ?>
@@ -40,6 +40,7 @@
     
     <br>
     <br>
+
     <div class="container">
         <div class="row">
         <?php
@@ -65,7 +66,41 @@
         ?>
         </div>
     </div>
-    
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+
+            </div>
+
+            <div class="col-6">
+                <!--bulle-->
+                <div class="chat-bubble">
+                    C'est parti !
+                    <div class="chat-bubble-arrow-border"></div>
+                    <div class="chat-bubble-arrow"></div>
+                </div>
+            </div>
+            <div class="col-3">
+
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-3">
+
+            </div>
+
+            <div class="col-6">
+                <img src="assets\coach.png" alt="" height="150px" width="150px">
+
+            </div>
+            <div class="col-3">
+
+            </div>
+        </div>
+        
+    </div>
 </div>
     
 </body>
