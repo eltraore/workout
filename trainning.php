@@ -37,7 +37,7 @@ require "header.php"?>
 
                 foreach($ligne as $employer){
 
-                    echo "<h3 class=\"text\"> ".$employer['prenom']." ".$employer['nom']."</h3>";
+                    echo "<h3 class=\"text\"> Hello ! ".$employer['prenom']." ".$employer['nom']."</h3>";
                     
                 }
             ?>
