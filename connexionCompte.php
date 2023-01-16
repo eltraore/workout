@@ -17,8 +17,7 @@ try{
     {
         if ($_REQUEST["mail"]==$ligne[0]['mail'] && SHA1($_REQUEST['password'])==$ligne[0]['MDP'] ) {  
 
-            $_SESSION['user'] = $_REQUEST["mail"];
-            $_SESSION['mdp'] =  SHA1($_REQUEST['password']);
+            $_SESSION['estConnecte']=true;
             $_SESSION['erreurConnect']=false;
             header("Location: trainning.php");
         
