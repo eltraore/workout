@@ -133,14 +133,16 @@ body
     left: 1.5em;
   }
   
-  .container {
+  .cont {
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 90%;
+ 
     width: 90%;
+    margin: auto;
+    margin-top: 90%;
   }
   
   
