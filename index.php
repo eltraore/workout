@@ -6,6 +6,14 @@ require "header.php";
     <title>Workout</title>
 </head>
     <body>
-        <a href="accueil.php"><img src="logo.png"></a>
+        <div class="container">
+            <div id="avatar">
+                <img src="logo.png" alt="avatar" />
+            </div>
+                <div id="author">
+                <a class="lien" href="accueil.php"><h1>C'est parti !</h1></a>
+                </div>
+            </div>
     </body>
+    <script src="script.js"></script>
 </html>
