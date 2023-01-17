@@ -83,7 +83,7 @@
                         <label for="mail">Mail :</label>
                         <br>
                         <input class="rounded-pill" type="text" name="mail" id="Mail" onfocusout="verifMail()"/> 
-                        <div id ="erreurCfMail"></div>
+                        <div id ="erreurMail"></div>
                     </div>
                     <div class="col-2"></div>
                 </div>
