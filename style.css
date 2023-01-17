@@ -16,34 +16,24 @@ html{
 
 body
 {
-    height: auto;
-    width: auto;
     background: linear-gradient(#2B2929, #CB0B0B);
     background-repeat: no-repeat;
-    background-size: cover;
-    bottom: 0;
-}
-
-.bloc
-{
-    width: 1500px;
-    height: 100%;
-    margin: 30px auto 30px;
 }
 
 /*responsive*/
 
-@media screen and (max-width: 600px)
+@media only screen and (min-width: 321px) and (max-width: 799px)
 {
-    .bloc {
-        width: 90%;
+    body {
+        width: 100%;
         font-size: 0.9em;
+        position: absolute;
     }
 }
 
 @media screen and (max-width: 1000px)
 {
-    .bloc {
+    body {
         height: 100%;
     }
 }
@@ -81,4 +71,66 @@ body
     border-top-right-radius : 10px;
   }
 
+.lien {
+    text-decoration: none;
+    color: #fff;
+}
+
+.case{
+    background-image: url("assets/echauffement.jpg");
+}
+
+.case > h3{
+    color: #CB0B0B;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size:xx-large;
+    font-style: italic;
+    text-align: center;
+}
+
+.categorie{
+    text-align: center;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.nom_categ{
+    color: #000;
+}
+
+.chat-bubble {
+    position: relative;
+    width: 8em;
+    margin: .5em auto;/* hz centered */
+    padding: .5em;
+    background-color: #EDEDED;
+    border: 2px solid #666;
+    border-radius: 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 0 1.5em #777;
+  }
+  .chat-bubble-arrow-border {
+    position: absolute;
+    bottom: -2em;
+    left: 1.5em;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 1em;
+    border-color: #666 transparent transparent transparent;
+  }
+  .chat-bubble-arrow {
+    border-color: #EDEDED transparent transparent transparent;
+    border-style: solid;
+    border-width: 1em;
+    height:0;
+    width:0;
+    position:absolute;
+    bottom: -1.87em;
+    left: 1.5em;
+  }
+  
   
