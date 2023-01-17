@@ -3,7 +3,7 @@
 try{
     session_start();
     require "sqlconnect.php" ;
-    $psw=SHA1($_REQUEST['password']);
+    $psw=password_hash($_REQUEST['password'],PASSWORD_DEFAULT);
    
     $sql= $connection->prepare("SELECT * FROM employer WHERE mail = :mail AND MDP = :MDP") ;
 
@@ -15,7 +15,7 @@ try{
 
     if(!empty($ligne))
     {
-        if ($_REQUEST["mail"]==$ligne[0]['mail'] && SHA1($_REQUEST['password'])==$ligne[0]['MDP'] ) {  
+        if ($_REQUEST["mail"]==$ligne[0]['mail'] && password_hash($_REQUEST['password'],PASSWORD_DEFAULT)==$ligne[0]['MDP'] ) {  
 
             $_SESSION['nom']=$ligne[0]['nom'];
             $_SESSION['prenom']=$ligne[0]['prenom'];
