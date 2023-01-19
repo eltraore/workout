@@ -4,7 +4,7 @@ try{
     session_start();
     require "sqlconnect.php" ;
    
-    $sql= $connection->prepare("SELECT * FROM employer WHERE mail = :mail") ;
+    $sql= $connection->prepare("SELECT * FROM employer WHERE mail = :mail LIMIT 1") ;
 
     $sql->bindParam(':mail', $_REQUEST["mail"], PDO::PARAM_STR);
   
@@ -14,7 +14,7 @@ try{
     
     if(!empty($ligne))
     {
-        echo"verify: ".password_verify($_REQUEST['password'],$ligne[0]['MDP']);
+        var_dump(password_verify($_REQUEST['password'],$ligne[0]['MDP']));
         if (password_verify($_REQUEST['password'],$ligne[0]['MDP']) ) {  
             
             $_SESSION['nom']=$ligne[0]['nom'];
@@ -25,7 +25,7 @@ try{
             echo "done";
             header("Location: trainning.php");
         }
-
+ 
     }else{
         $_SESSION['erreurConnect']=true;
         echo "failed";
