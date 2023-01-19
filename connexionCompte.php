@@ -3,33 +3,33 @@
 try{
     session_start();
     require "sqlconnect.php" ;
-    $psw=password_hash($_REQUEST['password'],PASSWORD_DEFAULT);
    
-    $sql= $connection->prepare("SELECT * FROM employer WHERE mail = :mail AND MDP = :MDP") ;
+    $sql= $connection->prepare("SELECT * FROM employer WHERE mail = :mail") ;
 
     $sql->bindParam(':mail', $_REQUEST["mail"], PDO::PARAM_STR);
-    $sql->bindParam(':MDP', $psw, PDO::PARAM_STR);
   
     $sql->execute();
     $ligne = $sql->fetchall();
-
+    echo "here ";
+    
     if(!empty($ligne))
     {
-        if ($_REQUEST["mail"]==$ligne[0]['mail'] && password_hash($_REQUEST['password'],PASSWORD_DEFAULT)==$ligne[0]['MDP'] ) {  
-
+        echo"verify: ".password_verify($_REQUEST['password'],$ligne[0]['MDP']);
+        if (password_verify($_REQUEST['password'],$ligne[0]['MDP']) ) {  
+            
             $_SESSION['nom']=$ligne[0]['nom'];
             $_SESSION['prenom']=$ligne[0]['prenom'];
 
             $_SESSION['estConnecte']=true;
             $_SESSION['erreurConnect']=false;
-
+            echo "done";
             header("Location: trainning.php");
-        
-    }
-    }else{
+        }
 
+    }else{
         $_SESSION['erreurConnect']=true;
-        header("Location: connexion.php");
+        echo "failed";
+        //header("Location: connexion.php");
         
         }
 
