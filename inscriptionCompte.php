@@ -17,7 +17,9 @@ try{
     $sql->execute();
 
     echo "Vos informations ont bien été ajoutées à notre base de données ! Vous êtes maintenant inscris !";
-
+    session_start();
+    $_SESSION['estConnecte'] = true;
+    
     header("location: trainning.php");
 
 }catch (PDOException $e){

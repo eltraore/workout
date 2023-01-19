@@ -2,7 +2,8 @@
 <?php 
     session_start();
     if(!$_SESSION['estConnecte']|| !isset($_SESSION['estConnecte'])){
-        header("Location: connexion.php");
+        echo $_SESSION['estConnecte'];
+        //header("Location: connexion.php");
     }else{
         require "header.php"?>
 <head>
