@@ -9,16 +9,16 @@ try{
     $sql->bindParam(':mail', $_REQUEST["mail"], PDO::PARAM_STR);
   
     $sql->execute();
-    $ligne = $sql->fetchall();
+    $ligne = $sql->fetch();
     echo "here ";
     
     if(!empty($ligne))
     {
-        var_dump(password_verify($_REQUEST['password'],$ligne[0]['MDP']));
-        if (password_verify($_REQUEST['password'],$ligne[0]['MDP']) ) {  
+        var_dump(password_verify($_REQUEST['password'],$ligne['MDP']));
+        if (password_verify($_REQUEST['password'],$ligne['MDP']) ) {  
             
-            $_SESSION['nom']=$ligne[0]['nom'];
-            $_SESSION['prenom']=$ligne[0]['prenom'];
+            $_SESSION['nom']=$ligne['nom'];
+            $_SESSION['prenom']=$ligne['prenom'];
 
             $_SESSION['estConnecte']=true;
             $_SESSION['erreurConnect']=false;
@@ -29,7 +29,7 @@ try{
     }else{
         $_SESSION['erreurConnect']=true;
         echo "failed";
-        //header("Location: connexion.php");
+        header("Location: connexion.php");
         
         }
 
