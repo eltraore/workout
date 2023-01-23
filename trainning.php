@@ -4,14 +4,15 @@
     if(!$_SESSION['estConnecte']|| !isset($_SESSION['estConnecte'])){
         header("Location: connexion.php");
     }else{
-        require "header.php"?>
+        require "header.php";
+        ?>
 <head>
     <title>Workout | Catégories</title>
 </head>
 <body>
 
     <div class="container">
-
+<?php require "nav.php";?>
         <br>
         <div class="row">
             <div class="col-4"></div>
@@ -68,6 +69,16 @@
             </div>
         </div>
         <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="behindCase"></div>
+                <div class="col-10 case coin-arrondi inFrontOfCase">
+                    <p id="qEchauffement">On échauffe quoi aujourd'hui ?</p>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
 
     </div>
     

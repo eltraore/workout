@@ -117,7 +117,7 @@ body
 }
 
 .nom_categ{
-    color: #000;
+    color: #28282d;
 }
 
   
@@ -163,4 +163,12 @@ body
     40% {transform: translateY(-15px);}
     60% {transform: translateY(-7px);}
   }
+
+#qEchauffement{
+  font-size: large;
+  font-weight: bold;
+  color: #28282d;
+  margin-top: 10px;
+  text-align: center;
+}
   
