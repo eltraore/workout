@@ -24,7 +24,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-1"></div>
-                <div class="col-10 case coin-arrondi">
+                <div class="behindCase"></div>
+                <div class="col-10 case coin-arrondi inFrontOfCase">
                 <?php
                     
                 
@@ -67,40 +68,7 @@
             </div>
         </div>
         <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-3">
 
-                </div>
-
-                <div class="col-6">
-                    <!--bulle-->
-                    <div class="chat-bubble">
-                        C'est parti !
-                        <div class="chat-bubble-arrow-border"></div>
-                        <div class="chat-bubble-arrow"></div>
-                    </div>
-                </div>
-                <div class="col-3">
-
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-3">
-
-                </div>
-
-                <div class="col-6">
-                    <img src="assets\coach.png" alt="" height="150px" width="150px">
-
-                </div>
-                <div class="col-3">
-
-                </div>
-            </div>
-            
-        </div>
     </div>
     
 </body>
