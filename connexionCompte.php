@@ -10,21 +10,17 @@ try{
   
     $sql->execute();
     $ligne = $sql->fetch();
-    echo "here ";
     
-    if(!empty($ligne))
+    if(!empty($ligne) && password_verify($_REQUEST['password'],$ligne['MDP']))
     {
-        var_dump(password_verify($_REQUEST['password'],$ligne['MDP']));
-        if (password_verify($_REQUEST['password'],$ligne['MDP']) ) {  
-            
-            $_SESSION['nom']=$ligne['nom'];
-            $_SESSION['prenom']=$ligne['prenom'];
+        $_SESSION['nom']=$ligne['nom'];
+        $_SESSION['prenom']=$ligne['prenom'];
 
-            $_SESSION['estConnecte']=true;
-            $_SESSION['erreurConnect']=false;
-            echo "done";
-            header("Location: trainning.php");
-        }
+        $_SESSION['estConnecte']=true;
+        $_SESSION['erreurConnect']=false;
+        echo "done";
+        header("Location: trainning.php");
+        
  
     }else{
         $_SESSION['erreurConnect']=true;
