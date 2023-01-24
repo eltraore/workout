@@ -57,7 +57,7 @@
                     echo'
                         <div class="col-2"></div>
                         <div class="col-8 categorie coin-arrondi">
-                            <a class="lien" href="echauffement.php?id="'.$categorie['id'].'">
+                            <a class="lien" href="echauffement.php?id='.$categorie['id'].'">
                                 <img class=" bounce2" src="'.$categorie["categ_icons"].'" height="50px"/ width="50px">
                                 <h3 class="nom_categ">'.$categorie['nom'].'</h3>
                             </a>
