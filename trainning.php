@@ -6,7 +6,6 @@
         //header("Location: connexion.php");
     }else{
         require "header.php";
-        $_SESSION['prenom']='test'
         ?>
 <head>
     <title>Workout | Catégories</title>
