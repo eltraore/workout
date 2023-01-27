@@ -43,11 +43,13 @@ require "header.php";
         </div>
 
         <div class="row">
-            <div class="col-2"> </div>
-                <div class="col-8" style="text-align: center;">
-                    <iframe width="200" height="350" src="https://www.youtube.com/embed/lcZDWo6hiuI"></iframe>
+            <div class="col-1"> </div>
+                <div class="col-10">
+                    <video controls width="320">
+                        <source src="<?php echo $video?>" type="video/webm">
+                    </video>
                 </div>
-            <div class="col-2"> </div>
+            <div class="col-1"> </div>
         </div>
                 
         <br>
