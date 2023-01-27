@@ -8,12 +8,15 @@ require "header.php";
     <?php
     include "sqlconnect.php";
 
-    $sql= $connection->prepare("SELECT * FROM employer WHERE employer.id=".$_REQUEST["id"]);
+    $sql= $connection->prepare("SELECT * FROM employer WHERE mail = :mail LIMIT 1") ;
 
     $sql->bindParam(':mail', $_REQUEST["mail"], PDO::PARAM_STR);
   
     $sql->execute();
     $ligne = $sql->fetch();
+
+    $req="SELECT * FROM employer WHERE employer.id=".$_REQUEST["id"];
+
     ?>
 </head>
 
