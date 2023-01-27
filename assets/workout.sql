@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 16 jan. 2023 à 21:48
+-- Généré le : ven. 27 jan. 2023 à 22:39
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -59,14 +59,17 @@ CREATE TABLE IF NOT EXISTS `echauffement` (
   `id_Categorie` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `Echauffement_Categorie_FK` (`id_Categorie`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `echauffement`
 --
 
 INSERT INTO `echauffement` (`id`, `nom`, `video`, `id_Categorie`) VALUES
-(1, 'avant', 'vidéo.tkt', 1);
+(1, 'Bras', 'assets\\Video.mp4', 1),
+(2, 'Dos', 'assets\\Video2.mp4', 2),
+(3, 'Jambes', 'assets\\Video.mp4', 3),
+(4, 'Nuque', 'assets\\Video.mp4', 4);
 
 -- --------------------------------------------------------
 
@@ -85,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `employer` (
   `id_Entreprise` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `employer_Entreprise_FK` (`id_Entreprise`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `employer`
@@ -94,9 +97,7 @@ CREATE TABLE IF NOT EXISTS `employer` (
 INSERT INTO `employer` (`id`, `nom`, `prenom`, `poste`, `mail`, `MDP`, `id_Entreprise`) VALUES
 (1, 'admin', 'admin', 'admin', 'admin.admin@workout.fr', 'admin', 2),
 (2, 'Delux', 'paul', 'patron', 'Delux.paul@auchant.fr', 'delux', 1),
-(7, 'test', 'test', 'test', 'test@test.fr', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 2),
-(8, 'test2', 'test2', 'test2', 'test2@test2.fr', '$2y$10$jEN1ykJDvs9goqMJmSY7POH2mgfZrJ0b1sFRGgouRgDQCJ82mBZrS', 1),
-(9, 'MANCEAU', 'Arthur', 'employer', 'arthur.manceau1@outlook.fr', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 1);
+(11, 'test', 'test', 'test', 'test@test.fr', '$2y$10$38YvoP9fNmsw49/4UxWYK.bV/sI4L8mFCL/jz/AgH2Bg2r5gaDKEu', 1);
 
 -- --------------------------------------------------------
 
@@ -117,8 +118,8 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
 --
 
 INSERT INTO `entreprise` (`id`, `nom`, `adresse`) VALUES
-(1, 'auchant', 'orleans 45450'),
-(2, 'WorkOut', 'orleans 45450');
+(1, 'Auchan', 'orleans 45450'),
+(2, 'Workout', 'orleans 45450');
 
 -- --------------------------------------------------------
 

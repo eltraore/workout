@@ -3,7 +3,7 @@ require "header.php";
 ?>
 <head>
     <title>Workout | Echauffement</title>
-</head>
+
     <?php
     include "sqlconnect.php";
 
@@ -30,7 +30,7 @@ require "header.php";
 
         <div class="row">
             <div class="col-4"></div>
-                <div class="col-4">
+                <div class="col-4"  style="text-align: center;">
                     <img src="assets\logo.png" height="80" width="80">
                 </div>
             <div class="col-4"></div>
@@ -58,7 +58,6 @@ require "header.php";
             <div class="col-1"> </div>
         </div>
                 
-        <br>
         <br>
 
         <div class="row">
