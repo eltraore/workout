@@ -15,7 +15,7 @@ require "header.php";
     $sql->execute();
     $ligne = $sql->fetch();
 
-    $req="SELECT * FROM employer WHERE employer.id=".$_REQUEST["id"];
+    // $req="SELECT * FROM employer WHERE employer.id=".$_SESSION["id"];
 
     ?>
 </head>

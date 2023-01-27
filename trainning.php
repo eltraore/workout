@@ -29,12 +29,7 @@
                 <div class="behindCase"></div>
                 <div class="col-10 case coin-arrondi inFrontOfCase">
                 <?php
-                    
-                
-
-                        echo "<h3> Salut  ".$_SESSION['prenom']." !</h3>";
-                        
-                    
+                    echo "<h3> Salut  ".$_SESSION['prenom']." !</h3>";
                 ?>
                 </div>
                 <div class="col-1"></div>
