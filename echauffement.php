@@ -14,13 +14,55 @@ require "header.php";
     $ligne = $sql->fetchall();
 
     foreach($ligne as $echauffement){
-        echo "<a href=\"Detail_activite.php?id=".$echauffement['id']."\">
-        <div>
-            <h3>".$echauffement['nom']."</h3>
-        </div>
-        </a>";
+        $nom = $echauffement['nom'];
+        $video = $echauffement['video'];
     }
     ?>
+
+    <script src="https://kit.fontawesome.com/2d470788f0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container"> 
+        <?php require "nav.php";?>
+        <br>
+        <div class="row">
+            <div class="col-4"></div>
+                <div class="col-4" style="text-align: center;">
+                    <img src="assets\logo.png" height="80" width="80"> </br></br>
+                </div>
+            <div class="col-4"> </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <?php echo"<h3>".$nom."</h3>"?>
+            </div>
+            <div class="col-4"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-2"> </div>
+                <div class="col-8" style="text-align: center;">
+                    <iframe width="200" height="350" src="https://www.youtube.com/embed/lcZDWo6hiuI"></iframe>
+                </div>
+            <div class="col-2"> </div>
+        </div>
+                
+        <br>
+
+        <div class="row">
+            <div class="col-4"> </div>
+                <div class="col-4" style="text-align: center;">
+                    <form action="qr_code.php">
+                        <button type="submit" style="color: white;" class="btn btn-dark rounded-pill">J'ai finis !</button>
+                    </form>
+                </div>
+            <div class="col-4"> </div>
+        </div>
+
+    </div>
 </body>
 </html>
 

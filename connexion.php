@@ -4,7 +4,7 @@ require "header.php";
 
 <head>
     <title>Workout | Connexion </title>
-    <script src="Connexion.js"></script>
+    <script src="script\connexion.js"></script>
 </head>
     <body>
         <div class="container">
@@ -12,7 +12,9 @@ require "header.php";
                 <div class="row">
                     <div class="col-4"> </div>
                         <div class="col-4" style="text-align: center;">
-                        <a href="accueil.php"><img src="logo.png" height="80" width="80"></a> </br></br>
+                        <a href="accueil.php">
+                            <img src="assets\logo.png" height="80" width="80">
+                        </a></br></br>
                         </div>
                     <div class="col-4"> </div>
                 </div>

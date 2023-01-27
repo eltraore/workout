@@ -10,7 +10,7 @@ require "header.php";
         <div class="row">
             <div class="col-2"> </div>
                 <div class="col-8" style="text-align: center; margin-top: 150px;">
-                    <img src="logo.png" height="200" width="200"> </br></br>
+                    <img src="assets\logo.png" height="200" width="200"> </br></br>
                 </div>
             <div class="col-2"> </div>
         </div>

@@ -8,7 +8,7 @@ require "header.php";
     <body>
         <div class="cont">
             <div id="avatar">
-                <img src="logo.png" alt="avatar" />
+                <img src="assets\logo.png"/>
             </div>
                 <div id="author">
                 <a class="lien" href="accueil.php"><h1>C'est parti !</h1></a>
@@ -26,5 +26,5 @@ require "header.php";
         </div>
             
     </body>
-    <script src="script.js"></script>
+    <script src="script\script.js"></script>
 </html>

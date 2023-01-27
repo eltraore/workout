@@ -29,7 +29,7 @@ require "header.php";
     <div class="row">
         <div class="col-4"> </div>
             <div class="col-4" style="text-align: center;">
-                <img src="logo.png" height="80" width="80"> </br></br>
+                <img src="assets\logo.png" height="80" width="80"> </br></br>
             </div>
         <div class="col-4"> </div>
     </div>
