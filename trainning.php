@@ -6,6 +6,15 @@
         //header("Location: connexion.php");
     }else{
         require "header.php";
+        require "sqlconnect.php" ;
+
+        $sql= $connection->prepare("SELECT * FROM employer WHERE id = :id ") ;
+
+        $sql->bindParam(':id', $_SESSION["idUser"], PDO::PARAM_STR);
+    
+        $sql->execute();
+        $ligne = $sql->fetch();
+        
         ?>
 <head>
     <title>Workout | Catégories</title>
@@ -29,7 +38,7 @@
                 <div class="behindCase"></div>
                 <div class="col-10 case coin-arrondi inFrontOfCase">
                 <?php
-                    echo "<h3> Salut  ".$_SESSION['prenom']." !</h3>";
+                    echo "<h3> Salut  ".$ligne['prenom']." !</h3>";
                 ?>
                 </div>
                 <div class="col-1"></div>

@@ -7,19 +7,20 @@ try{
     $sql= $connection->prepare("SELECT * FROM employer WHERE mail = :mail LIMIT 1") ;
 
     $sql->bindParam(':mail', $_REQUEST["mail"], PDO::PARAM_STR);
-  
+
     $sql->execute();
     $ligne = $sql->fetch();
     
     if(!empty($ligne) && password_verify($_REQUEST['password'],$ligne['MDP']))
     {
-        $_SESSION['nom']=$ligne['nom'];
-        $_SESSION['prenom']=$ligne['prenom'];
+        $_SESSION['idUser']=$ligne['id'];
 
         $_SESSION['estConnecte']=true;
         $_SESSION['erreurConnect']=false;
         echo "done";
         header("Location: trainning.php");
+
+
         
  
     }else{
