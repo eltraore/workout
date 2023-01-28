@@ -94,6 +94,34 @@ body
     color: #28282d;
 }
 
+.cont {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+    width: 90%;
+    margin: auto;
+    margin-top: 90%;
+  }
+  
+  
+
+  #avatar {
+    display: absolute;
+    transition: all 0.75s ease-in;
+    transform: translateY(0);
+    z-index: 10;
+    cursor: pointer;
+  }
+  
+  #avatar img {
+    border-radius: 100%;
+    border: 4px solid var(--primary-color);
+    width: 128px;
+    height: 128px;
+  }
   
 #author {
     position: absolute;
