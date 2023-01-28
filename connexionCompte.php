@@ -20,8 +20,6 @@ try{
         echo "done";
         header("Location: trainning.php");
 
-
-        
  
     }else{
         $_SESSION['erreurConnect']=true;

@@ -18,8 +18,15 @@ try{
 
     echo "Vos informations ont bien été ajoutées à notre base de données ! Vous êtes maintenant inscris !";
     session_start();
-    $_SESSION['estConnecte'] = true;
     
+    $sql= $connection->prepare("SELECT * FROM employer WHERE mail = :mail LIMIT 1") ;
+    $sql->bindParam(':mail', $_REQUEST["mail"], PDO::PARAM_STR);
+    $sql->execute();
+    $ligne = $sql->fetch();
+
+    $_SESSION['idUser']=$ligne['id'];
+    $_SESSION['estConnecte'] = true;
+
     header("location: trainning.php");
 
 }catch (PDOException $e){

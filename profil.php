@@ -47,80 +47,84 @@ require "header.php";
                         </div>
                     <div class="col-4"> </div>
                 </div>
+                <form method="GET" action="modifierProfil.php">
 
-                <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-8" style="text-align: center;">
-                            <label for="nom">Nom : </label>
-                            <input class="rounded-pill" name="nom" type="text" placeholder=" <?php echo $nom ?>" id="nom"/>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8" style="text-align: center;">
+                                <label for="nom">Nom : </label>
+                                <input class="rounded-pill" name="nom" type="text" value=" <?php echo $ligne['nom'] ?>" id="nom"/>
+                                <div id="erreurMail"></div>   
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8" style="text-align: center;">
+                            <label for="prenom">Prénom : </label>
+                            <input class="rounded-pill" name="prenom" type="text" value=" <?php echo $ligne['prenom'] ?>" id="prenom"/>
                             <div id="erreurMail"></div>   
+                        </div>
+                        <div class="col-2"></div>
                     </div>
-                    <div class="col-2"></div>
-                </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8" style="text-align: center;">
+                            <label for="mail">Email : </label>
+                            <input class="rounded-pill" name="mail" type="text" value=" <?php echo $ligne['mail'] ?>" id="mail"/>
+                            <div id="erreurMail"></div>   
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8" style="text-align: center;">
+                            <label for="poste">Poste : </label>
+                            <input class="rounded-pill" name="poste" type="text" value=" <?php echo $ligne['poste'] ?>" id="poste"/>
+                            <div id="erreurMail"></div>   
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+
+
+
+                    <!-- <div class="row">
+                        <div class="col-4">Mot de passe :</div>
+                        <div class="col-4">
+                            <?php //echo $MDP ?>
+                        </div>
+                        <div class="col-4"></div>
+                    </div> -->
+                    </div>
+                <div class="col-1"></div>
 
                 <br>
 
                 <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-8" style="text-align: center;">
-                        <label for="prenom">Prénom : </label>
-                        <input class="rounded-pill" name="prenom" type="text" placeholder=" <?php echo $prenom ?>" id="prenom"/>
-                        <div id="erreurMail"></div>   
+                        <div class="col-1"></div>
+                        <div class="col-10" style="text-align: center;">
+                            <div class="row">
+                                <div class="col-6" style="text-align: center;"> 
+                                    <button style="color: white;" class="btn btn-dark rounded-pill btn-sm">Retour</button>
+                                </div>
+                                <div class="col-6" style="text-align: center;"> 
+                                    <button type="submit" style="color: white; text-align: center;" class="btn btn-dark rounded-pill btn-sm">Enregistrer</button>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="col-1"></div>
                     </div>
-                    <div class="col-2"></div>
-                </div>
 
-                <br>
-
-                <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-8" style="text-align: center;">
-                        <label for="mail">Email : </label>
-                        <input class="rounded-pill" name="mail" type="text" placeholder=" <?php echo $mail ?>" id="mail"/>
-                        <div id="erreurMail"></div>   
-                    </div>
-                    <div class="col-2"></div>
-                </div>
-
-                <br>
-
-                <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-8" style="text-align: center;">
-                        <label for="poste">Poste : </label>
-                        <input class="rounded-pill" name="poste" type="text" placeholder=" <?php echo $poste ?>" id="poste"/>
-                        <div id="erreurMail"></div>   
-                    </div>
-                    <div class="col-2"></div>
-                </div>
-
-
-                <!-- <div class="row">
-                    <div class="col-4">Mot de passe :</div>
-                    <div class="col-4">
-                        <?php echo $MDP ?>
-                    </div>
-                    <div class="col-4"></div>
-                </div> -->
-                </div>
-            <div class="col-1"></div>
-
-            <br>
-
-            <div class="row">
-                    <div class="col-1"></div>
-                    <div class="col-10" style="text-align: center;">
-                        <div class="row">
-                            <div class="col-6" style="text-align: center;"> 
-                                <button type="reset" style="color: white;" class="btn btn-dark rounded-pill btn-sm">Annuler</button>
-                            </div>
-                            <div class="col-6" style="text-align: center;"> 
-                                <button type="submmit" style="color: white; text-align: center;" class="btn btn-dark rounded-pill btn-sm">Se connecter</button>
-                            </div>
-                        </div> 
-                    </div>
-                    <div class="col-1"></div>
-                </div> 
+                </form>
            
         </div>
 
