@@ -1,23 +1,36 @@
 <?php
 require "header.php";
+
+    session_start();
+
+    if(!$_SESSION['estConnecte']|| !isset($_SESSION['estConnecte'])){
+        echo $_SESSION['estConnecte'];
+        //header("Location: connexion.php");
+    }else{
+        require "header.php";
+        require "sqlconnect.php" ;
+
+        $sql= $connection->prepare("SELECT * FROM employer WHERE id = :id ") ;
+
+        $sql->bindParam(':id', $_SESSION["idUser"], PDO::PARAM_STR);
+    
+        $sql->execute();
+        $ligne = $sql->fetch();
+        
+
+        $nom = $ligne["nom"];
+        $prenom = $ligne["prenom"];
+        $poste = $ligne["poste"];
+        $mail = $ligne["mail"];
+        $mdp = $ligne["MDP"];
+
 ?>
 <head>
     <title>Workout | Profil</title>
 </head>
 <body>
-    <?php
-    include "sqlconnect.php";
+    
 
-    $sql= $connection->prepare("SELECT * FROM employer WHERE mail = :mail LIMIT 1") ;
-
-    $sql->bindParam(':mail', $_REQUEST["mail"], PDO::PARAM_STR);
-  
-    $sql->execute();
-    $ligne = $sql->fetch();
-
-    // $req="SELECT * FROM employer WHERE employer.id=".$_SESSION["id"];
-
-    ?>
 </head>
 
 <body>
@@ -45,3 +58,4 @@ require "header.php";
 </body>
 </html>
 
+<?php } ?>
