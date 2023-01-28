@@ -74,26 +74,26 @@ switch ($_REQUEST['table']) {
                     <label>Entreprise</label>
                     <select name="entrepriseEmp">
                     <?php
-        }
-        $sql= $connection->prepare("SELECT * FROM entreprise") ; 
-        $sql->execute();
-        $ligne = $sql->fetchall();
+                        }
+                        $sql= $connection->prepare("SELECT * FROM entreprise") ; 
+                        $sql->execute();
+                        $ligne = $sql->fetchall();
 
-        foreach($ligne as $entreprise){ 
-            if($entreprise["id"] == $sonEntreprise){
-                echo "<option value=".$entreprise['id']." selected=\"selected\">".$entreprise['nom']."</option>";
-            }else{
-                echo "<option value=".$entreprise['id'].">".$entreprise['nom']."</option>";
-            }
-        }
-                    ?>
-                    </select>
-                </div>
-        <button type="submit">Modifier</button>
-        <button type="reset">Annuler</button>
-        </form>
-        <a href="../BackOfficeChoose.php?table=1"><button>Retour</button></a>
-        <?php
+                        foreach($ligne as $entreprise){ 
+                            if($entreprise["id"] == $sonEntreprise){
+                                echo "<option value=".$entreprise['id']." selected=\"selected\">".$entreprise['nom']."</option>";
+                            }else{
+                                echo "<option value=".$entreprise['id'].">".$entreprise['nom']."</option>";
+                            }
+                        }
+                                    ?>
+                                    </select>
+                                </div>
+                        <button type="submit">Modifier</button>
+                        <button type="reset">Annuler</button>
+                        </form>
+                        <a href="../BackOfficeChoose.php?table=1"><button>Retour</button></a>
+                    <?php
 
         
         break;
@@ -166,26 +166,26 @@ switch ($_REQUEST['table']) {
                     <label>Catégorie</label>
                     <select name="categorieEchauff">
                     <?php
-        }
-        $sql= $connection->prepare("SELECT * FROM categorie") ; 
-        $sql->execute();
-        $ligne = $sql->fetchall();
+                        }
+                        $sql= $connection->prepare("SELECT * FROM categorie") ; 
+                        $sql->execute();
+                        $ligne = $sql->fetchall();
 
-        foreach($ligne as $categorie){ 
-            if($categorie["id"] == $saCategorie){
-                echo "<option value=".$categorie['id']." selected=\"selected\">".$categorie['nom']."</option>";
-            }else{
-                echo "<option value=".$categorie['id'].">".$categorie['nom']."</option>";
-            }
-        }
-                    ?>
-                    </select>
-                </div>
-        <button type="submit">Modifier</button>
-        <button type="reset">Annuler</button>
-        </form>
-        <a href="../BackOfficeChoose.php?table=3"><button>Retour</button></a>
-        <?php
+                        foreach($ligne as $categorie){ 
+                            if($categorie["id"] == $saCategorie){
+                                echo "<option value=".$categorie['id']." selected=\"selected\">".$categorie['nom']."</option>";
+                            }else{
+                                echo "<option value=".$categorie['id'].">".$categorie['nom']."</option>";
+                            }
+                        }
+                                    ?>
+                                    </select>
+                                </div>
+                        <button type="submit">Modifier</button>
+                        <button type="reset">Annuler</button>
+                        </form>
+                        <a href="../BackOfficeChoose.php?table=3"><button>Retour</button></a>
+                    <?php
 
         
         break;
