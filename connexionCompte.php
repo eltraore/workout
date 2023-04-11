@@ -4,34 +4,35 @@ try{
     session_start();
     require "sqlconnect.php" ;
    
-    $sql= $connection->prepare("SELECT mail,MDP FROM employer WHERE mail = :mail AND MDP = :MDP") ;
+    $sql= $connection->prepare("SELECT * FROM employer WHERE mail = :mail LIMIT 1") ;
 
     $sql->bindParam(':mail', $_REQUEST["mail"], PDO::PARAM_STR);
-    $sql->bindParam(':MDP', SHA1($_REQUEST['password']), PDO::PARAM_STR);
-  
+
     $sql->execute();
-    $ligne = $sql->fetchall();
-
-    if(!empty($ligne))
+    $ligne = $sql->fetch();
+    
+    if(!empty($ligne) && password_verify($_REQUEST['password'],$ligne['MDP']))
     {
-        if ($_REQUEST["mail"]==$ligne[0]['mail'] && SHA1($_REQUEST['password'])==$ligne[0]['MDP'] ) {  
+        $_SESSION['idUser']=$ligne['id'];
 
-            $_SESSION['user'] = $user;
-            $_SESSION['mdp'] = $mdp;
-            $_SESSION['erreurConnect']=false;
-            header("Location: trainning.php");
-        
-    }
+        $_SESSION['estConnecte']=true;
+        $_SESSION['erreurConnect']=false;
+        echo "done";
+        header("Location: trainning.php");
+
+ 
     }else{
-
         $_SESSION['erreurConnect']=true;
+        echo "failed";
         header("Location: connexion.php");
         
         }
 
-}catch (PDOException $e){
-    echo "Erreur: ".$e->getMessage();
+}catch (PDOException $pdo){
+    echo "Erreur: ".$pdo->getMessage();
     echo"<a href =\"index.php\">Retour à l'accueil</a>";
 }
+
+
 
 ?>

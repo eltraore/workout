@@ -16,135 +16,127 @@ html{
 
 body
 {
-    height: auto;
-    width: auto;
     background: linear-gradient(#2B2929, #CB0B0B);
     background-repeat: no-repeat;
-    background-size: cover;
-    bottom: 0;
-}
-
-.bloc
-{
-    width: 1500px;
-    height: 100%;
-    margin: 30px auto 30px;
 }
 
 /*responsive*/
 
-@media screen and (max-width: 600px)
+@media only screen and (min-width: 321px) and (max-width: 799px)
 {
-    .bloc {
-        width: 90%;
+    body {
+        width: 100%;
         font-size: 0.9em;
+        position: absolute;
     }
 }
 
 @media screen and (max-width: 1000px)
 {
-    .bloc {
+    body {
         height: 100%;
     }
 }
 
-
-
-/*Detail_activité*/
-
-
-.video_placement
-{
-    margin-left: auto;
-    margin-right: auto;
+.coin-arrondi{
+  border-bottom-left-radius : 10px;
+  border-bottom-right-radius : 10px;
+  border-top-left-radius : 10px;
+  border-top-right-radius : 10px;
 }
 
-/*
-.button_finish{
-    margin-top: 25px;
-    margin-bottom: auto;
+.lien {
+  text-decoration: none;
+  color: #fff;
+}
 
-    background-color: #2B2929; 
-    border: none;
-    color: white;
-    padding: 15px 45px;
+
+.behindCase {
+  width: 80%;
+  padding: 5px 20px;
+  font-size: 16px;
+  border: none;
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  padding-bottom:50px;
+} 
+
+.inFrontOfCase{
+  z-index: 5;
+  padding: 5px 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  margin-top:-45px;
+  margin-left:50px;
+  background-color: rgba(153, 24, 24, 0.3);  
+}
+
+.case > h3{
+  color: #CB0B0B;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size:xx-large;
+  font-style: italic;
+  text-align: center;
+}
+
+.categorie{
+    border: 3px solid #28282d;
+    border-radius: 1em;
+    box-shadow: -5px 5px 0px 0px #28282d;
+    text-align: center;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.nom_categ{
+    color: #28282d;
+}
+
+.cont {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+    width: 90%;
+    margin: auto;
+    margin-top: 90%;
+  }
+  
+  
+
+  #avatar {
+    display: absolute;
+    transition: all 0.75s ease-in;
+    transform: translateY(0);
+    z-index: 10;
+    cursor: pointer;
+  }
+  
+  #avatar img {
+    border-radius: 100%;
+    border: 4px solid var(--primary-color);
+    width: 128px;
+    height: 128px;
+  }
+  
+#author {
+    position: absolute;
+    display: block;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     border-radius: 20px;
 } */
 
-
-/*Inscription.php*/
 .coin-arrondi{
-    border-bottom-left-radius : 25px;
-    border-bottom-right-radius : 25px;
-    border-top-left-radius : 25px;
-    border-top-right-radius : 25px;
-    height: 32px;
-    box-shadow: 3px 2px 2px rgb(0, 0, 0);
+    border-bottom-left-radius : 10px;
+    border-bottom-right-radius : 10px;
+    border-top-left-radius : 10px;
+    border-top-right-radius : 10px;
   }
 
-label{
-    color: white;
-}
-
-.align-input{
-    display: table;
-    margin-left: auto;
-    margin-right: auto;   
-}
-
-.row{
-    
-    margin-bottom: 12px; 
-}
-
-input{
-    background-color: rgb(241, 241, 241);
-}
-
-
-option{
-    background-color: rgb(241, 241, 241);
-}
-
-#Nom{
-    width: 140px;
-}
-
-#Prenom{
-    width: 140px;
-}
-
-#poste{
-    width: 230px;
-}
-
-#entreprise{
-    width: 230px;
-}
-
-#Mail{
-    width: 230px;
-}
-
-#CfMail{
-    width: 230px;
-}
-
-#mdp{
-    width: 230px;
-}
-
-#mdp_verif{
-    width: 230px;
-}
-
-#reset{
-    width: 100px;
-}
-
-#inscrire{
-    width: 100px;
-}
+  

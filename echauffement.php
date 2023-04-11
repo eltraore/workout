@@ -3,8 +3,7 @@ require "header.php";
 ?>
 <head>
     <title>Workout | Echauffement</title>
-</head>
-<body>
+
     <?php
     include "sqlconnect.php";
 
@@ -14,13 +13,64 @@ require "header.php";
     $ligne = $sql->fetchall();
 
     foreach($ligne as $echauffement){
-        echo "<a href=\"Detail_activite.php?id=".$echauffement['id']."\">
-        <div>
-            <h3>".$echauffement['nom']."</h3>
-        </div>
-        </a>";
+        $nom = $echauffement['nom'];
+        $video = $echauffement['video'];
     }
     ?>
+
+</head>
+
+<body>
+
+    <div class="container"> 
+
+        <?php require "nav.php";?>
+
+        <br>
+
+        <div class="row">
+            <div class="col-4"></div>
+                <div class="col-4"  style="text-align: center;">
+                    <img src="assets\logo.png" height="80" width="80">
+                </div>
+            <div class="col-4"></div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4 categorie coin-arrondi">
+                <?php echo"<h3>".$nom."</h3>"?>
+            </div>
+            <div class="col-4"></div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-1"> </div>
+                <div class="col-10">
+                    <video class="coin-arrondi" controls width="320">
+                        <source src="<?php echo $video?>" type="video/webm">
+                    </video>
+                </div>
+            <div class="col-1"> </div>
+        </div>
+                
+        <br>
+
+        <div class="row">
+            <div class="col-4"> </div>
+                <div class="col-4" style="text-align: center;">
+                    <form action="qr_code.php">
+                        <button type="submit" style="color: white;" class="btn btn-dark rounded-pill">J'ai finis !</button>
+                    </form>
+                </div>
+            <div class="col-4"> </div>
+        </div>
+
+    </div>
 </body>
 </html>
 
