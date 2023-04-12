@@ -6,82 +6,62 @@
 </head>
 
     <body>
-        
-        <h1>Inscription</h1>
-        <form method="GET" action="inscriptionCompte.php">
-            
-            <div>
-                <label for="nom">Nom </label>
-                <input class="coin-arrondi" type="text" name="nom" id="Nom" onfocusout="verifNom()">
-            </div>
 
-                <div id="erreurNom"></div>   
-                    <br>
-                <div>
-                    <label for="prenom">Prénom :</label>
-                    <input type="text" name="prenom" id="Prenom" onfocusout="verifPrenom()">
+        <div class=bg-top></div>
+
+        <form method="GET" action="inscriptionCompte.php">
+            <div class="connexion-wrapper">
+                <div class="img-top">
+                    <a href="accueil.php">
+                        <img src="assets\logo.png" height="120" width="120">
+                    </a>
                 </div>
 
-            <div id="erreurPrenom"></div>
+                <div class="form-container gap-2">
+                    <div class="w-80">
+                        <div class="red-text" for="nom">Nom :</div>
+                        <input type="text" name="nom" id="Nom" onfocusout="verifNom()">
+                        <div id="erreurNom"></div>   
+                    </div>
 
-            <div>
-                <label for="Poste">Poste :</label>
-                <!--Connecter à la base de donnee pour afficher les differents postes-->
-                <input type="text" name="poste" id="poste">
-            </div>
+                    <div class="w-80">
+                        <div class="red-text" for="prenom">Prénom :</div>
+                        <input type="text" name="prenom" id="Prenom" onfocusout="verifPrenom()">
+                        <div id="erreurPrenom"></div>
+                    </div>
 
-            <div>
-                <label for="entreprise">Entreprise :</label>
-                <!--Connecter à la base de donnee pour afficher les differentes entreprises-->
-                <select name="entreprise" id="entreprise">
-                    <option value="">--Choisir une entreprise--</option>
-                    <?php 
-                        require 'sqlconnect.php';
+                    <div class="w-80">
+                        <label class="red-text" for="mail">Mail :</label>
+                        <input type="text" name="mail" id="Mail" onfocusout="verifMail()">
+                        <div id="erreurMail"></div>
+                    </div>
 
-                        $sql = 'SELECT id, nom FROM entreprise' ;
-                        $table = $connection->query($sql);
-                        while ($ligne = $table->fetch()) {
-                            echo '<option value="'.$ligne["id"].'">'.$ligne["nom"].'</option>';
-                        }    
-                        $table->closeCursor();    
-                    ?>
-                </select>
-            </div>
+                    <div class="w-80">
+                        <label class="red-text" for="Cfmail">Confirmation mail :</label>
+                        <input type="text" id="CfMail" onfocusout="verifCfMail()">
+                        <div id ="erreurCfMail"></div>
+                    </div>
 
-            <div>
-                <label for="mail">Mail :</label>
-                <input type="text" name="mail" id="Mail" onfocusout="verifMail()">
-                <div id="erreurMail"></div>
-            </div>
+                    <div class="w-80">
+                        <div class="red-text" for="mdp">Mot de passe :</div>
+                        <input type="password" name="password" id="mdp" >
+                    </div>
 
-                <br>
-
-            <div>
-            <label for="Cfmail">Confirmation mail :</label>
-                <input type="text" id="CfMail" onfocusout="verifCfMail()">
-                 <div id ="erreurCfMail"></div>
-            </div>
-           
-
-            <div>
-                <label for="mdp">Mot de passe </label>
-                <input type="password" name="password" id="mdp" >
-            </div>
-
-            <div>
-                <label for="mdp_verif">Confirmation mot de passe </label>
-                <input type="password" id="mdp_verif" onfocusout="TestMdp_verif()">
-            </div>
+                    <div class="w-80">
+                        <div class="red-text" for="mdp_verif">Confirmation mot de passe </div>
+                        <input type="password" id="mdp_verif" onfocusout="TestMdp_verif()">
+                    </div>
+                </div>
+                
+                
+                <div class="connexion-btn">
+                    <button type="submit" class="btn-wrapper"><img src="assets/locationtick.png" alt=""></button>
+                    <button type="reset" class="btn-wrapper"><img src="assets/locationcross.png" alt=""></button>
+                </div> 
 
                 <div id="erreurMdp"></div>
-                    <br>
-                <div>
-                    <input type="reset" value="Annuler">
-
-                    <button id="inscrire">S'inscrire</button>
-                </div>
-            </fieldset>
+            </div>  
         </form>
-        <a href="accueil.php"><button>Retour</button></a>
+
     </body>
 </html> 

@@ -18,11 +18,11 @@ require "header.php";
 
             <div class="row m-2">
                 <div class="col-6">
-                    <div type="button" class="btn-accueil"><a href="connexion.php">Connexion</a></div>
+                    <div type="button" class="btn-wrapper"><a href="connexion.php">Connexion</a></div>
                 </div>
 
                 <div class="col-6">
-                    <div type="button" class="btn-accueil"><a href="Inscription.php">Inscription</a></div>
+                    <div type="button" class="btn-wrapper"><a href="Inscription.php">Inscription</a></div>
                 </div>
             </div>
         </div>
