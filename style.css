@@ -16,11 +16,65 @@ html{
 
 body
 {
-    background: linear-gradient(#2B2929, #CB0B0B);
-    background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  background-color: #28282d;
 }
 
-/*responsive*/
+.bg-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #494848;
+  width: 100%;
+  height: 50%;
+  border-bottom-right-radius: 80px;
+}
+
+.accueil-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.btn-accueil {
+  margin-top: 20px;
+	background-color:#ffffff;
+	border-radius:20px;
+	cursor:pointer;
+	font-size:18px;
+	padding:10px 0px;
+  text-align: center;
+}
+
+.btn-accueil a {
+	color:#000000;
+	text-decoration:none;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4rem;
+}
+
+.form-container input {
+  width: 100% !important;
+	background-color:#ffffff;
+	border-radius:15px;
+	font-size:18px;
+	padding: 5px 5px;
+}
+
+.red-text {
+  text-align: left !important;
+  color: #CB0B0B;
+}
+
+
+/* responsive
 
 @media only screen and (min-width: 321px) and (max-width: 799px)
 {
@@ -36,7 +90,7 @@ body
     body {
         height: 100%;
     }
-}
+} */
 
 .coin-arrondi{
   border-bottom-left-radius : 10px;
