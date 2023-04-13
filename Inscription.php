@@ -24,13 +24,13 @@
 
                 <div class="form-container gap-2">
                     <div class="w-80">
-                        <div class="red-text" for="nom">Nom :</div>
+                        <label class="red-text" for="nom">Nom :</label>
                         <input type="text" name="nom" id="Nom" onfocusout="verifNom()">
                         <div id="erreurNom"></div>   
                     </div>
 
                     <div class="w-80">
-                        <div class="red-text" for="prenom">Prénom :</div>
+                        <label class="red-text" for="prenom">Prénom :</label>
                         <input type="text" name="prenom" id="Prenom" onfocusout="verifPrenom()">
                         <div id="erreurPrenom"></div>
                     </div>
@@ -48,12 +48,12 @@
                     </div>
 
                     <div class="w-80">
-                        <div class="red-text" for="mdp">Mot de passe :</div>
+                        <label class="red-text" for="mdp">Mot de passe :</label>
                         <input type="password" name="password" id="mdp" >
                     </div>
 
                     <div class="w-80">
-                        <div class="red-text" for="mdp_verif">Confirmation mot de passe </div>
+                        <label class="red-text" for="mdp_verif">Confirmation mot de passe </label>
                         <input type="password" id="mdp_verif" onfocusout="TestMdp_verif()">
                     </div>
    

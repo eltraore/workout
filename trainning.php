@@ -37,18 +37,44 @@
 
             <div class="training-wrapper">
                 <div class="training-card">
-                    <div>
-                        <?php
-                            $prenom = $_GET['prenom'];
-                            echo "Bonjour, " . $prenom;
-                        ?>
+                    <div class="text-default">
+                        Hey
+                        <span class="red-text">
+                            <?php
+                                echo "".$ligne['prenom']."";
+                            ?>
+                        </span>
+                        !<br><br>
+                        Es-tu prêt à t’échauffer ?
                     </div>
                 </div>
             </div>
             
             <div class="training-wrapper mb-80">
                 <div class="training-card">
+                    <div class="categorie-card mb-3">
+                        <div class="categorie-img"><img src="assets/nuque.png" alt="" width="100%"></div>
 
+                        <div class="categorie-content">Nuque</div>
+                    </div>
+
+                    <div class="categorie-card mb-3">
+                        <div class="categorie-img"><img src="assets/dos.png" alt="" width="100%"></div>
+
+                        <div class="categorie-content">Dos</div>
+                    </div>
+
+                    <div class="categorie-card mb-3">
+                        <div class="categorie-img"><img src="assets/bras.png" alt="" width="100%"></div>
+
+                        <div class="categorie-content">Bras</div>
+                    </div>
+
+                    <div class="categorie-card">
+                        <div class="categorie-img"><img src="assets/jambe.png" alt="" width="100%"></div>
+
+                        <div class="categorie-content">Jambes</div>
+                    </div>
                 </div>
             </div>
         </div>
