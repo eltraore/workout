@@ -188,6 +188,21 @@ body
   background-color: #494848;
 }
 
+.qr-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 50px;
+  border-radius: 15px;
+  background-color: #494848;
+}
+
+.qr-code {
+  width: 100%;
+  border-radius: 5px;
+}
+
 /* responsive
 
 @media only screen and (min-width: 321px) and (max-width: 799px)
