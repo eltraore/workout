@@ -62,9 +62,18 @@ body
   justify-content: space-between;
 }
 
+.top-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 15px 0px 15px;
+}
+
 .img-top {
   text-align: right;
-  padding: 15px 15px 0px 0px;
 }
 
 .form-container {
@@ -118,6 +127,29 @@ body
   text-align: center;
 }
 
+.training-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  gap: 2rem;
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+.training-wrapper {
+  padding: 0px 50px;
+}
+
+.training-card {
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #494848;
+}
 
 /* responsive
 
