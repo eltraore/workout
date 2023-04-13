@@ -7,17 +7,6 @@
 
     $user = $ligne[0][0];
 
-    $sql= $connection->prepare("SELECT *
-                                FROM employer
-                                ") ;
-    $sql->bindParam(':id', $_REQUEST['id']);
-    $sql->execute();
-    $ligne = $sql->fetchall();
-
-    foreach($ligne){
-        $nom = $employer['nom'];
-    }
-
     preg_match('/(.*)@/', $user, $output_array);
 ?>
 <html>
