@@ -37,7 +37,7 @@
 
             <div class="training-wrapper">
                 <div class="training-card">
-                    <div class="text-default">
+                    <div class="text-default mb-3">
                         Hey
                         <span class="red-text">
                             <?php
@@ -49,34 +49,31 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="training-wrapper mb-80">
                 <div class="training-card">
-                    <div class="categorie-card mb-3">
-                        <div class="categorie-img"><img src="assets/nuque.png" alt="" width="100%"></div>
+                    <?php
+                        include "sqlconnect.php";
 
-                        <div class="categorie-content">Nuque</div>
-                    </div>
+                        $sql= $connection->prepare("SELECT * FROM categorie") ; 
+                        $sql->execute();
+                        $ligne = $sql->fetchall();
 
-                    <div class="categorie-card mb-3">
-                        <div class="categorie-img"><img src="assets/dos.png" alt="" width="100%"></div>
+                        foreach($ligne as $categorie){
+                            echo'
+                                <a class="lien" href="echauffement.php?id='.$categorie['id'].'">
+                                    <div class="categorie-card mb-3">
+                                        <div class="categorie-img"><img src="'.$categorie["categ_icons"].'" alt="" width="100%"></div>
+                                        <div class="categorie-content">'.$categorie['nom'].'</div>
+                                    </div>
+                                </a>
 
-                        <div class="categorie-content">Dos</div>
-                    </div>
-
-                    <div class="categorie-card mb-3">
-                        <div class="categorie-img"><img src="assets/bras.png" alt="" width="100%"></div>
-
-                        <div class="categorie-content">Bras</div>
-                    </div>
-
-                    <div class="categorie-card">
-                        <div class="categorie-img"><img src="assets/jambe.png" alt="" width="100%"></div>
-
-                        <div class="categorie-content">Jambes</div>
-                    </div>
+                            ';  
+                        }
+                    ?>
                 </div>
             </div>
+
         </div>
 
 
