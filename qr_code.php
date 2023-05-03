@@ -30,9 +30,9 @@
                 <div class="text-default mb-3">
                     Félicitations!
                     <br>
-                    Tu es maintenant bien échauffé,
-                    <br>
-                    Voici ta récompense
+                    Tu es bien échauffé,
+                    <br><br>
+                    Voici ta récompense :
                 </div>
             </div>
         </div>
