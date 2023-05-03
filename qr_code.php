@@ -28,13 +28,8 @@
         <div class="training-wrapper">
             <div class="training-card">
                 <div class="text-default mb-3">
-                    Félicitations
-                    <span class="red-text">
-                        <?php
-                            echo "".$ligne['prenom']."";
-                        ?>
-                    </span>
-                    !<br>
+                    Félicitations!
+                    <br>
                     Tu es maintenant bien échauffé,
                     <br>
                     Voici ta récompense
@@ -52,8 +47,8 @@
         </div>
 
         <div class="mb-80 text-center">
-            <form action="qr_code.php">
-                <button type="submit" class="btn-wrapper">J’ai finis !</button>
+            <form action="trainning.php">
+                <button type="submit" class="btn-wrapper">Terminer</button>
             </form>
         </div>
 
